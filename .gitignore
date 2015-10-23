@@ -46,3 +46,6 @@ dist/
 .DS_Store
 Thumbs.db
 
+# deprecated and deleted #
+src/blueharvest/geocaching/database/
+src/blueharvest/geocaching/httpxml/
