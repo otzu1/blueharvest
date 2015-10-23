@@ -27,13 +27,8 @@ nb-configuration.xml
 .nb-gradle/
 
 # build, mixture of resources which should and shouldn't be ignored #
-build/built-jar.properties
-build/classes/
-build/empty/
-build/generated/ # TODO: (not working) duplicate generated sources from wsimport #
-build/generated/jax-wsCache/ # duplicate generated sources from wsimport #
-build/generated-sources/ap-source-output/ # may be empty #
-# build/generated-sources/jax-ws/ # leave this commented to whitelist the generated sources from wsimport #
+build/
+!build/generated-sources/jax-ws/ # generated sources from wsimport #
 
 # .jar is here #
 dist/
