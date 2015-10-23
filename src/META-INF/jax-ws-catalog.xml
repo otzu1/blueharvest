@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:24246/WebServices/UserService.asmx?wsdl" uri="wsdl/localhost_24246/WebServices/UserService.asmx.wsdl"/>
+    <system systemId="http://localhost:24246/WebServices/UserService.asmx?WSDL" uri="wsdl/localhost_24246/WebServices/UserService.asmx.wsdl"/>
+</catalog>

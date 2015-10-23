@@ -1,0 +1,47 @@
+*.class
+
+# Mobile Tools for Java (J2ME) #
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml #
+hs_err_pid*
+
+# configuration file(s) ... everywhere! #
+config.properties
+
+# netbeans plugin(s) #
+.projectKnowledge
+# netbeans #
+nbproject
+nbproject/private/
+# not all versions of netbeans use the rest, but left here just in case #
+nbbuild/ 
+nbdist/
+nbactions.xml
+nb-configuration.xml
+.nb-gradle/
+
+# build, mixture of resources which should and shouldn't be ignored #
+build/built-jar.properties
+build/classes/
+build/empty/
+build/generated/ # TODO: (not working) duplicate generated sources from wsimport #
+build/generated-sources/ap-source-output/ # may be empty #
+# build/generated-sources/jax-ws/ # leave this commented to whitelist the generated sources from wsimport #
+
+# .jar is here #
+dist/
+
+# test # leave this commented to include tests created here by junit #
+
+# xml-resources # leave this commented to include xml such as web services including wsdl(s)
+
+# miscellaneous #
+.DS_Store
+Thumbs.db
+
