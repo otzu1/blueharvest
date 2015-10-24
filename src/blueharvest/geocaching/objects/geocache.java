@@ -72,7 +72,15 @@ public class geocache {
         this.logbook = logbook;
         this.creator = creator;
     }
+    
+    public java.util.UUID getId() {
+        return id;
+    }
 
+    public java.util.Date getAnniversary() {
+        return anniversary;
+    }
+    
     public String getName() {
         return name;
     }
