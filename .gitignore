@@ -33,9 +33,9 @@ build/
 # .jar is here #
 dist/
 
-# test # leave this commented to include tests created here by junit #
+# test/ # leave this commented to include tests created here by junit #
 
-# xml-resources # leave this commented to include xml such as web services including wsdl(s)
+# xml-resources/ # leave this commented to include xml such as web services including wsdl(s)
 
 # miscellaneous #
 .DS_Store
