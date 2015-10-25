@@ -50,17 +50,16 @@ public abstract class user { // implements data<blueharvest.geocaching.objects.u
      * <h3>get</h3>
      * gets a user from the web service
      *
-     * @param email email of the user
+     * @param username username of the user
      * @return user
      */
-    public static blueharvest.geocaching.objects.user get(String email) {
-        blueharvest.geocaching.webservices.user.User x = getUser(email);
+    public static blueharvest.geocaching.objects.user get(String username) {
+        blueharvest.geocaching.webservices.user.User x = getUser(username);
         return new blueharvest.geocaching.objects.user(
             java.util.UUID.fromString(x.getId()),
             x.getAnniversary().toGregorianCalendar().getTime(),
-            x.getUsername(), x.getPassword(),
-            java.util.UUID.fromString(x.getSalt()), email,
-            x.isActive(), x.isLocked(), null, null);
+            username, x.getPassword(), java.util.UUID.fromString(x.getSalt()),
+            x.getEmail(), x.isActive(), x.isLocked(), null, null);
     }
 
     /**
