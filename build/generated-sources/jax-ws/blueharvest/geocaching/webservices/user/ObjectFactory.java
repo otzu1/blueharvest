@@ -25,8 +25,6 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _ServiceCredentials_QNAME = new QName("http://blueharvest.com/webservices/", "ServiceCredentials");
-    private final static QName _User_QNAME = new QName("http://blueharvest.com/webservices/", "User");
-    private final static QName _Boolean_QNAME = new QName("http://blueharvest.com/webservices/", "boolean");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: blueharvest.geocaching.webservices.user
@@ -52,14 +50,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link User }
-     * 
-     */
-    public User createUser() {
-        return new User();
-    }
-
-    /**
      * Create an instance of {@link GetUserResponse }
      * 
      */
@@ -68,11 +58,35 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link User }
+     * 
+     */
+    public User createUser() {
+        return new User();
+    }
+
+    /**
      * Create an instance of {@link InsertUserResponse }
      * 
      */
     public InsertUserResponse createInsertUserResponse() {
         return new InsertUserResponse();
+    }
+
+    /**
+     * Create an instance of {@link UpdateUserResponse }
+     * 
+     */
+    public UpdateUserResponse createUpdateUserResponse() {
+        return new UpdateUserResponse();
+    }
+
+    /**
+     * Create an instance of {@link UpdateUser }
+     * 
+     */
+    public UpdateUser createUpdateUser() {
+        return new UpdateUser();
     }
 
     /**
@@ -106,24 +120,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://blueharvest.com/webservices/", name = "ServiceCredentials")
     public JAXBElement<ServiceCredentials> createServiceCredentials(ServiceCredentials value) {
         return new JAXBElement<ServiceCredentials>(_ServiceCredentials_QNAME, ServiceCredentials.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link User }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://blueharvest.com/webservices/", name = "User")
-    public JAXBElement<User> createUser(User value) {
-        return new JAXBElement<User>(_User_QNAME, User.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Boolean }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://blueharvest.com/webservices/", name = "boolean")
-    public JAXBElement<Boolean> createBoolean(Boolean value) {
-        return new JAXBElement<Boolean>(_Boolean_QNAME, Boolean.class, null, value);
     }
 
 }
