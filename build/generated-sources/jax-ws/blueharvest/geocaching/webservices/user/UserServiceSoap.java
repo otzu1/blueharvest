@@ -16,7 +16,7 @@ import javax.xml.ws.ResponseWrapper;
  * Generated source version: 2.2
  * 
  */
-@WebService(name = "UserServiceSoap", targetNamespace = "http://blueharvest.com/webservices/")
+@WebService(name = "UserServiceSoap", targetNamespace = "http://blueharvestgeo.com/webservices/")
 @XmlSeeAlso({
     ObjectFactory.class
 })
@@ -30,14 +30,14 @@ public interface UserServiceSoap {
      * @return
      *     returns blueharvest.geocaching.webservices.user.User
      */
-    @WebMethod(operationName = "GetUser", action = "http://blueharvest.com/webservices/GetUser")
-    @WebResult(name = "GetUserResult", targetNamespace = "http://blueharvest.com/webservices/")
-    @RequestWrapper(localName = "GetUser", targetNamespace = "http://blueharvest.com/webservices/", className = "blueharvest.geocaching.webservices.user.GetUser")
-    @ResponseWrapper(localName = "GetUserResponse", targetNamespace = "http://blueharvest.com/webservices/", className = "blueharvest.geocaching.webservices.user.GetUserResponse")
+    @WebMethod(operationName = "GetUser", action = "http://blueharvestgeo.com/webservices/GetUser")
+    @WebResult(name = "GetUserResult", targetNamespace = "http://blueharvestgeo.com/webservices/")
+    @RequestWrapper(localName = "GetUser", targetNamespace = "http://blueharvestgeo.com/webservices/", className = "blueharvest.geocaching.webservices.user.GetUser")
+    @ResponseWrapper(localName = "GetUserResponse", targetNamespace = "http://blueharvestgeo.com/webservices/", className = "blueharvest.geocaching.webservices.user.GetUserResponse")
     public User getUser(
-        @WebParam(name = "username", targetNamespace = "http://blueharvest.com/webservices/")
+        @WebParam(name = "username", targetNamespace = "http://blueharvestgeo.com/webservices/")
         String username,
-        @WebParam(name = "ServiceCredentials", targetNamespace = "http://blueharvest.com/webservices/", header = true, partName = "ServiceCredentials")
+        @WebParam(name = "ServiceCredentials", targetNamespace = "http://blueharvestgeo.com/webservices/", header = true, partName = "ServiceCredentials")
         ServiceCredentials serviceCredentials);
 
     /**
@@ -47,14 +47,14 @@ public interface UserServiceSoap {
      * @return
      *     returns java.lang.Boolean
      */
-    @WebMethod(operationName = "InsertUser", action = "http://blueharvest.com/webservices/InsertUser")
-    @WebResult(name = "InsertUserResult", targetNamespace = "http://blueharvest.com/webservices/")
-    @RequestWrapper(localName = "InsertUser", targetNamespace = "http://blueharvest.com/webservices/", className = "blueharvest.geocaching.webservices.user.InsertUser")
-    @ResponseWrapper(localName = "InsertUserResponse", targetNamespace = "http://blueharvest.com/webservices/", className = "blueharvest.geocaching.webservices.user.InsertUserResponse")
+    @WebMethod(operationName = "InsertUser", action = "http://blueharvestgeo.com/webservices/InsertUser")
+    @WebResult(name = "InsertUserResult", targetNamespace = "http://blueharvestgeo.com/webservices/")
+    @RequestWrapper(localName = "InsertUser", targetNamespace = "http://blueharvestgeo.com/webservices/", className = "blueharvest.geocaching.webservices.user.InsertUser")
+    @ResponseWrapper(localName = "InsertUserResponse", targetNamespace = "http://blueharvestgeo.com/webservices/", className = "blueharvest.geocaching.webservices.user.InsertUserResponse")
     public Boolean insertUser(
-        @WebParam(name = "u", targetNamespace = "http://blueharvest.com/webservices/")
+        @WebParam(name = "u", targetNamespace = "http://blueharvestgeo.com/webservices/")
         User u,
-        @WebParam(name = "ServiceCredentials", targetNamespace = "http://blueharvest.com/webservices/", header = true, partName = "ServiceCredentials")
+        @WebParam(name = "ServiceCredentials", targetNamespace = "http://blueharvestgeo.com/webservices/", header = true, partName = "ServiceCredentials")
         ServiceCredentials serviceCredentials);
 
     /**
@@ -64,14 +64,14 @@ public interface UserServiceSoap {
      * @return
      *     returns java.lang.Boolean
      */
-    @WebMethod(operationName = "UpdateUser", action = "http://blueharvest.com/webservices/UpdateUser")
-    @WebResult(name = "UpdateUserResult", targetNamespace = "http://blueharvest.com/webservices/")
-    @RequestWrapper(localName = "UpdateUser", targetNamespace = "http://blueharvest.com/webservices/", className = "blueharvest.geocaching.webservices.user.UpdateUser")
-    @ResponseWrapper(localName = "UpdateUserResponse", targetNamespace = "http://blueharvest.com/webservices/", className = "blueharvest.geocaching.webservices.user.UpdateUserResponse")
+    @WebMethod(operationName = "UpdateUser", action = "http://blueharvestgeo.com/webservices/UpdateUser")
+    @WebResult(name = "UpdateUserResult", targetNamespace = "http://blueharvestgeo.com/webservices/")
+    @RequestWrapper(localName = "UpdateUser", targetNamespace = "http://blueharvestgeo.com/webservices/", className = "blueharvest.geocaching.webservices.user.UpdateUser")
+    @ResponseWrapper(localName = "UpdateUserResponse", targetNamespace = "http://blueharvestgeo.com/webservices/", className = "blueharvest.geocaching.webservices.user.UpdateUserResponse")
     public Boolean updateUser(
-        @WebParam(name = "u", targetNamespace = "http://blueharvest.com/webservices/")
+        @WebParam(name = "u", targetNamespace = "http://blueharvestgeo.com/webservices/")
         User u,
-        @WebParam(name = "ServiceCredentials", targetNamespace = "http://blueharvest.com/webservices/", header = true, partName = "ServiceCredentials")
+        @WebParam(name = "ServiceCredentials", targetNamespace = "http://blueharvestgeo.com/webservices/", header = true, partName = "ServiceCredentials")
         ServiceCredentials serviceCredentials);
 
     /**
@@ -82,16 +82,16 @@ public interface UserServiceSoap {
      * @return
      *     returns java.lang.Boolean
      */
-    @WebMethod(operationName = "AuthUser", action = "http://blueharvest.com/webservices/AuthUser")
-    @WebResult(name = "AuthUserResult", targetNamespace = "http://blueharvest.com/webservices/")
-    @RequestWrapper(localName = "AuthUser", targetNamespace = "http://blueharvest.com/webservices/", className = "blueharvest.geocaching.webservices.user.AuthUser")
-    @ResponseWrapper(localName = "AuthUserResponse", targetNamespace = "http://blueharvest.com/webservices/", className = "blueharvest.geocaching.webservices.user.AuthUserResponse")
+    @WebMethod(operationName = "AuthUser", action = "http://blueharvestgeo.com/webservices/AuthUser")
+    @WebResult(name = "AuthUserResult", targetNamespace = "http://blueharvestgeo.com/webservices/")
+    @RequestWrapper(localName = "AuthUser", targetNamespace = "http://blueharvestgeo.com/webservices/", className = "blueharvest.geocaching.webservices.user.AuthUser")
+    @ResponseWrapper(localName = "AuthUserResponse", targetNamespace = "http://blueharvestgeo.com/webservices/", className = "blueharvest.geocaching.webservices.user.AuthUserResponse")
     public Boolean authUser(
-        @WebParam(name = "username", targetNamespace = "http://blueharvest.com/webservices/")
+        @WebParam(name = "username", targetNamespace = "http://blueharvestgeo.com/webservices/")
         String username,
-        @WebParam(name = "password", targetNamespace = "http://blueharvest.com/webservices/")
+        @WebParam(name = "password", targetNamespace = "http://blueharvestgeo.com/webservices/")
         String password,
-        @WebParam(name = "ServiceCredentials", targetNamespace = "http://blueharvest.com/webservices/", header = true, partName = "ServiceCredentials")
+        @WebParam(name = "ServiceCredentials", targetNamespace = "http://blueharvestgeo.com/webservices/", header = true, partName = "ServiceCredentials")
         ServiceCredentials serviceCredentials);
 
 }

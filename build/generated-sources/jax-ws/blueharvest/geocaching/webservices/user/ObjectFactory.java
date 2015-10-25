@@ -24,7 +24,7 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _ServiceCredentials_QNAME = new QName("http://blueharvest.com/webservices/", "ServiceCredentials");
+    private final static QName _ServiceCredentials_QNAME = new QName("http://blueharvestgeo.com/webservices/", "ServiceCredentials");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: blueharvest.geocaching.webservices.user
@@ -117,7 +117,7 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link ServiceCredentials }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://blueharvest.com/webservices/", name = "ServiceCredentials")
+    @XmlElementDecl(namespace = "http://blueharvestgeo.com/webservices/", name = "ServiceCredentials")
     public JAXBElement<ServiceCredentials> createServiceCredentials(ServiceCredentials value) {
         return new JAXBElement<ServiceCredentials>(_ServiceCredentials_QNAME, ServiceCredentials.class, null, value);
     }
