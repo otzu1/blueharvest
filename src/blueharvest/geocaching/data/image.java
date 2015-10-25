@@ -10,7 +10,7 @@ package blueharvest.geocaching.data;
  * @author jmb
  * @since 2015-10-24
  */
-public class image {
+public abstract class image {
 
     public static blueharvest.geocaching.objects.image get(java.util.UUID id) {
         // todo

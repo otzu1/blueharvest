@@ -10,7 +10,7 @@ package blueharvest.geocaching.data;
  * @author jmb
  * @since 2015-10-15 Back to the Future Day!
  */
-public class logbook {
+public abstract class logbook {
 
     public static blueharvest.geocaching.objects.logbook get(java.util.UUID id) {
         // todo
