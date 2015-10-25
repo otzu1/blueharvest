@@ -6,4 +6,5 @@
  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="mainclientconfig" 
  >
     <import location="UserService.asmx.xml" namespace="http://blueharvest.com/webservices/"/>
+    <import location="ImageService.asmx.xml" namespace="http://blueharvestgeo.com/webservices/"/>
 </definitions>

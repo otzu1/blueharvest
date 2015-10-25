@@ -28,7 +28,8 @@ nb-configuration.xml
 
 # build, mixture of resources which should and shouldn't be ignored #
 build/
-!build/generated-sources/jax-ws/ # generated sources from wsimport #
+!build/generated-sources/jax-ws/blueharvest/geocaching/webservices/user/* # generated sources from wsimport #
+!build/generated-sources/jax-ws/blueharvest/geocaching/webservices/image/* # generated sources from wsimport #
 
 # .jar is here #
 dist/

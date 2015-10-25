@@ -17,14 +17,14 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "UserService", targetNamespace = "http://blueharvest.com/webservices/", wsdlLocation = "http://localhost:24246/WebServices/UserService.asmx?WSDL")
+@WebServiceClient(name = "UserService", targetNamespace = "http://blueharvestgeo.com/webservices/", wsdlLocation = "http://localhost:24246/WebServices/UserService.asmx?WSDL")
 public class UserService
     extends Service
 {
 
     private final static URL USERSERVICE_WSDL_LOCATION;
     private final static WebServiceException USERSERVICE_EXCEPTION;
-    private final static QName USERSERVICE_QNAME = new QName("http://blueharvest.com/webservices/", "UserService");
+    private final static QName USERSERVICE_QNAME = new QName("http://blueharvestgeo.com/webservices/", "UserService");
 
     static {
         URL url = null;
@@ -69,7 +69,7 @@ public class UserService
      */
     @WebEndpoint(name = "UserServiceSoap")
     public UserServiceSoap getUserServiceSoap() {
-        return super.getPort(new QName("http://blueharvest.com/webservices/", "UserServiceSoap"), UserServiceSoap.class);
+        return super.getPort(new QName("http://blueharvestgeo.com/webservices/", "UserServiceSoap"), UserServiceSoap.class);
     }
 
     /**
@@ -81,7 +81,7 @@ public class UserService
      */
     @WebEndpoint(name = "UserServiceSoap")
     public UserServiceSoap getUserServiceSoap(WebServiceFeature... features) {
-        return super.getPort(new QName("http://blueharvest.com/webservices/", "UserServiceSoap"), UserServiceSoap.class, features);
+        return super.getPort(new QName("http://blueharvestgeo.com/webservices/", "UserServiceSoap"), UserServiceSoap.class, features);
     }
 
     /**
@@ -91,7 +91,7 @@ public class UserService
      */
     @WebEndpoint(name = "UserServiceSoap12")
     public UserServiceSoap getUserServiceSoap12() {
-        return super.getPort(new QName("http://blueharvest.com/webservices/", "UserServiceSoap12"), UserServiceSoap.class);
+        return super.getPort(new QName("http://blueharvestgeo.com/webservices/", "UserServiceSoap12"), UserServiceSoap.class);
     }
 
     /**
@@ -103,7 +103,7 @@ public class UserService
      */
     @WebEndpoint(name = "UserServiceSoap12")
     public UserServiceSoap getUserServiceSoap12(WebServiceFeature... features) {
-        return super.getPort(new QName("http://blueharvest.com/webservices/", "UserServiceSoap12"), UserServiceSoap.class, features);
+        return super.getPort(new QName("http://blueharvestgeo.com/webservices/", "UserServiceSoap12"), UserServiceSoap.class, features);
     }
 
     private static URL __getWsdlLocation() {

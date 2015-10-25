@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://blueharvest.com/webservices/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://blueharvest.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://blueharvestgeo.com/webservices/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://blueharvestgeo.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
-    <s:schema elementFormDefault="qualified" targetNamespace="http://blueharvest.com/webservices/">
+    <s:schema elementFormDefault="qualified" targetNamespace="http://blueharvestgeo.com/webservices/">
       <s:import namespace="http://microsoft.com/wsdl/types/" />
       <s:element name="GetUser">
         <s:complexType>
@@ -146,7 +146,7 @@
   <wsdl:binding name="UserServiceSoap" type="tns:UserServiceSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetUser">
-      <soap:operation soapAction="http://blueharvest.com/webservices/GetUser" style="document" />
+      <soap:operation soapAction="http://blueharvestgeo.com/webservices/GetUser" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
         <soap:header message="tns:GetUserServiceCredentials" part="ServiceCredentials" use="literal" />
@@ -156,7 +156,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="InsertUser">
-      <soap:operation soapAction="http://blueharvest.com/webservices/InsertUser" style="document" />
+      <soap:operation soapAction="http://blueharvestgeo.com/webservices/InsertUser" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
         <soap:header message="tns:InsertUserServiceCredentials" part="ServiceCredentials" use="literal" />
@@ -166,7 +166,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UpdateUser">
-      <soap:operation soapAction="http://blueharvest.com/webservices/UpdateUser" style="document" />
+      <soap:operation soapAction="http://blueharvestgeo.com/webservices/UpdateUser" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
         <soap:header message="tns:UpdateUserServiceCredentials" part="ServiceCredentials" use="literal" />
@@ -176,7 +176,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="AuthUser">
-      <soap:operation soapAction="http://blueharvest.com/webservices/AuthUser" style="document" />
+      <soap:operation soapAction="http://blueharvestgeo.com/webservices/AuthUser" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
         <soap:header message="tns:AuthUserServiceCredentials" part="ServiceCredentials" use="literal" />
@@ -189,7 +189,7 @@
   <wsdl:binding name="UserServiceSoap12" type="tns:UserServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetUser">
-      <soap12:operation soapAction="http://blueharvest.com/webservices/GetUser" style="document" />
+      <soap12:operation soapAction="http://blueharvestgeo.com/webservices/GetUser" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
         <soap12:header message="tns:GetUserServiceCredentials" part="ServiceCredentials" use="literal" />
@@ -199,7 +199,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="InsertUser">
-      <soap12:operation soapAction="http://blueharvest.com/webservices/InsertUser" style="document" />
+      <soap12:operation soapAction="http://blueharvestgeo.com/webservices/InsertUser" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
         <soap12:header message="tns:InsertUserServiceCredentials" part="ServiceCredentials" use="literal" />
@@ -209,7 +209,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UpdateUser">
-      <soap12:operation soapAction="http://blueharvest.com/webservices/UpdateUser" style="document" />
+      <soap12:operation soapAction="http://blueharvestgeo.com/webservices/UpdateUser" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
         <soap12:header message="tns:UpdateUserServiceCredentials" part="ServiceCredentials" use="literal" />
@@ -219,7 +219,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="AuthUser">
-      <soap12:operation soapAction="http://blueharvest.com/webservices/AuthUser" style="document" />
+      <soap12:operation soapAction="http://blueharvestgeo.com/webservices/AuthUser" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
         <soap12:header message="tns:AuthUserServiceCredentials" part="ServiceCredentials" use="literal" />

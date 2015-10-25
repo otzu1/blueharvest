@@ -1,5 +1,5 @@
 
-package blueharvest.geocaching.webservices.user;
+package blueharvest.geocaching.webservices.image;
 
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlElementDecl;
@@ -10,7 +10,7 @@ import javax.xml.namespace.QName;
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the blueharvest.geocaching.webservices.user package. 
+ * generated in the blueharvest.geocaching.webservices.image package. 
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -27,10 +27,34 @@ public class ObjectFactory {
     private final static QName _ServiceCredentials_QNAME = new QName("http://blueharvestgeo.com/webservices/", "ServiceCredentials");
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: blueharvest.geocaching.webservices.user
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: blueharvest.geocaching.webservices.image
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link UpdateImage }
+     * 
+     */
+    public UpdateImage createUpdateImage() {
+        return new UpdateImage();
+    }
+
+    /**
+     * Create an instance of {@link Image }
+     * 
+     */
+    public Image createImage() {
+        return new Image();
+    }
+
+    /**
+     * Create an instance of {@link DeleteImage }
+     * 
+     */
+    public DeleteImage createDeleteImage() {
+        return new DeleteImage();
     }
 
     /**
@@ -42,75 +66,51 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AuthUserResponse }
+     * Create an instance of {@link UpdateImageResponse }
      * 
      */
-    public AuthUserResponse createAuthUserResponse() {
-        return new AuthUserResponse();
+    public UpdateImageResponse createUpdateImageResponse() {
+        return new UpdateImageResponse();
     }
 
     /**
-     * Create an instance of {@link GetUserResponse }
+     * Create an instance of {@link GetImage }
      * 
      */
-    public GetUserResponse createGetUserResponse() {
-        return new GetUserResponse();
+    public GetImage createGetImage() {
+        return new GetImage();
     }
 
     /**
-     * Create an instance of {@link User }
+     * Create an instance of {@link InsertImage }
      * 
      */
-    public User createUser() {
-        return new User();
+    public InsertImage createInsertImage() {
+        return new InsertImage();
     }
 
     /**
-     * Create an instance of {@link InsertUserResponse }
+     * Create an instance of {@link InsertImageResponse }
      * 
      */
-    public InsertUserResponse createInsertUserResponse() {
-        return new InsertUserResponse();
+    public InsertImageResponse createInsertImageResponse() {
+        return new InsertImageResponse();
     }
 
     /**
-     * Create an instance of {@link UpdateUserResponse }
+     * Create an instance of {@link DeleteImageResponse }
      * 
      */
-    public UpdateUserResponse createUpdateUserResponse() {
-        return new UpdateUserResponse();
+    public DeleteImageResponse createDeleteImageResponse() {
+        return new DeleteImageResponse();
     }
 
     /**
-     * Create an instance of {@link UpdateUser }
+     * Create an instance of {@link GetImageResponse }
      * 
      */
-    public UpdateUser createUpdateUser() {
-        return new UpdateUser();
-    }
-
-    /**
-     * Create an instance of {@link AuthUser }
-     * 
-     */
-    public AuthUser createAuthUser() {
-        return new AuthUser();
-    }
-
-    /**
-     * Create an instance of {@link InsertUser }
-     * 
-     */
-    public InsertUser createInsertUser() {
-        return new InsertUser();
-    }
-
-    /**
-     * Create an instance of {@link GetUser }
-     * 
-     */
-    public GetUser createGetUser() {
-        return new GetUser();
+    public GetImageResponse createGetImageResponse() {
+        return new GetImageResponse();
     }
 
     /**

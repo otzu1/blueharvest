@@ -1,5 +1,5 @@
 
-package blueharvest.geocaching.webservices.user;
+package blueharvest.geocaching.webservices.image;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="GetUserResult" type="{http://blueharvestgeo.com/webservices/}User" minOccurs="0"/>
+ *         &lt;element name="GetImageResult" type="{http://blueharvestgeo.com/webservices/}Image" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,36 +29,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "getUserResult"
+    "getImageResult"
 })
-@XmlRootElement(name = "GetUserResponse")
-public class GetUserResponse {
+@XmlRootElement(name = "GetImageResponse")
+public class GetImageResponse {
 
-    @XmlElement(name = "GetUserResult")
-    protected User getUserResult;
+    @XmlElement(name = "GetImageResult")
+    protected Image getImageResult;
 
     /**
-     * Gets the value of the getUserResult property.
+     * Gets the value of the getImageResult property.
      * 
      * @return
      *     possible object is
-     *     {@link User }
+     *     {@link Image }
      *     
      */
-    public User getGetUserResult() {
-        return getUserResult;
+    public Image getGetImageResult() {
+        return getImageResult;
     }
 
     /**
-     * Sets the value of the getUserResult property.
+     * Sets the value of the getImageResult property.
      * 
      * @param value
      *     allowed object is
-     *     {@link User }
+     *     {@link Image }
      *     
      */
-    public void setGetUserResult(User value) {
-        this.getUserResult = value;
+    public void setGetImageResult(Image value) {
+        this.getImageResult = value;
     }
 
 }
