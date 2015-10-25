@@ -17,6 +17,17 @@ public class image {
     private final int rank;
     private final java.io.File file;
 
+    /**
+     * <h3>constructor</h3>
+     * @param id id of this
+     * @param uri where this is located
+     * @param rank the rank of this
+     * @param file the file object of this
+     * @see java.util.UUID
+     * @see java.net.URI
+     * @see java.io.File
+     * @since 2015-10-24
+     */
     public image(java.util.UUID id, java.net.URI uri, int rank,
         java.io.File file) {
         this.id = id;
@@ -25,6 +36,10 @@ public class image {
         this.file = file;
     }
 
+    public java.util.UUID getId() {
+        return id;
+    }
+    
     public java.net.URI getUri() {
         return uri;
     }
