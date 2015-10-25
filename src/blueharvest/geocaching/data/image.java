@@ -8,12 +8,28 @@ package blueharvest.geocaching.data;
 /**
  *
  * @author jmb
+ * @since 2015-10-24
  */
 public class image {
-    
-    //get
-    //insert
-    //update
-    //delete
-    
+
+    public static blueharvest.geocaching.objects.image get(java.util.UUID id) {
+        // todo
+        throw new java.lang.UnsupportedOperationException("Not supported yet.");
+    }
+
+    public static boolean insert(blueharvest.geocaching.objects.image i) {
+        // todo
+        throw new java.lang.UnsupportedOperationException("Not supported yet.");
+    }
+
+    public static final boolean update(blueharvest.geocaching.objects.image i) {
+        // todo
+        throw new java.lang.UnsupportedOperationException("Not supported yet.");
+    }
+
+    public static final boolean delete(java.util.UUID id) {
+        // todo
+        throw new java.lang.UnsupportedOperationException("Not implemented.");
+    }
+
 }
