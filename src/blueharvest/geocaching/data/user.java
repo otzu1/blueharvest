@@ -81,7 +81,7 @@ public abstract class user { // implements data<blueharvest.geocaching.objects.u
      * anniversary computed by the database. salt and password (hashed) computed
      * by the web service.
      *
-     * @param u <b>u</b>ser
+     * @param u (u)ser
      * @return true or false dependent on whether the user was inserted
      */
     public static boolean insert(blueharvest.geocaching.objects.user u) {
@@ -114,6 +114,41 @@ public abstract class user { // implements data<blueharvest.geocaching.objects.u
     }
 
     /**
+     * <h3>update</h3>
+     * updates the user through the web service into the database. id, active,
+     * and locked the only update-able attributes at this time and therefore
+     * required (all others may be null).
+     *
+     * @param u (u)ser
+     * @return true or false dependent on whether the user was inserted
+     * @since 2015-10-24
+     */
+    public static final boolean update(blueharvest.geocaching.objects.user u) {
+        blueharvest.geocaching.webservices.user.User x
+            = new blueharvest.geocaching.webservices.user.User();
+        x.setId(u.getId().toString());
+        x.setActive(u.isActive());
+        x.setLocked(u.isLocked());
+        return updateUser(x);
+    }
+
+    private static Boolean updateUser(blueharvest.geocaching.webservices.user.User u) {
+        try {
+            return getServicePort().updateUser(u, getServiceCredentials());
+        } catch (java.lang.Exception ex) { // java.net.ConnectException
+            java.util.logging.Logger.getLogger(
+                new Object().getClass().getName()).log(
+                    java.util.logging.Level.SEVERE, null, ex);
+            return false;
+        }
+    }
+
+    public static final boolean delete(java.util.UUID id) {
+        // todo
+        throw new java.lang.UnsupportedOperationException("Not implemented.");
+    }
+
+    /**
      * <h3>auth</h3>
      * authorization for a user
      *
@@ -128,16 +163,6 @@ public abstract class user { // implements data<blueharvest.geocaching.objects.u
     private static Boolean authUser(
         java.lang.String email, java.lang.String password) {
         return getServicePort().authUser(email, password, getServiceCredentials());
-    }
-
-    public static final boolean update(blueharvest.geocaching.objects.user u) {
-        // todo
-        throw new java.lang.UnsupportedOperationException("Not implemented.");
-    }
-
-    public static final boolean delete(java.util.UUID id) {
-        // todo
-        throw new java.lang.UnsupportedOperationException("Not implemented.");
     }
 
 }

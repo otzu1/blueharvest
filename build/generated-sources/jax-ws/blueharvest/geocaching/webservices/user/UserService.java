@@ -106,50 +106,6 @@ public class UserService
         return super.getPort(new QName("http://blueharvest.com/webservices/", "UserServiceSoap12"), UserServiceSoap.class, features);
     }
 
-    /**
-     * 
-     * @return
-     *     returns UserServiceHttpGet
-     */
-    @WebEndpoint(name = "UserServiceHttpGet")
-    public UserServiceHttpGet getUserServiceHttpGet() {
-        return super.getPort(new QName("http://blueharvest.com/webservices/", "UserServiceHttpGet"), UserServiceHttpGet.class);
-    }
-
-    /**
-     * 
-     * @param features
-     *     A list of {@link javax.xml.ws.WebServiceFeature} to configure on the proxy.  Supported features not in the <code>features</code> parameter will have their default values.
-     * @return
-     *     returns UserServiceHttpGet
-     */
-    @WebEndpoint(name = "UserServiceHttpGet")
-    public UserServiceHttpGet getUserServiceHttpGet(WebServiceFeature... features) {
-        return super.getPort(new QName("http://blueharvest.com/webservices/", "UserServiceHttpGet"), UserServiceHttpGet.class, features);
-    }
-
-    /**
-     * 
-     * @return
-     *     returns UserServiceHttpPost
-     */
-    @WebEndpoint(name = "UserServiceHttpPost")
-    public UserServiceHttpPost getUserServiceHttpPost() {
-        return super.getPort(new QName("http://blueharvest.com/webservices/", "UserServiceHttpPost"), UserServiceHttpPost.class);
-    }
-
-    /**
-     * 
-     * @param features
-     *     A list of {@link javax.xml.ws.WebServiceFeature} to configure on the proxy.  Supported features not in the <code>features</code> parameter will have their default values.
-     * @return
-     *     returns UserServiceHttpPost
-     */
-    @WebEndpoint(name = "UserServiceHttpPost")
-    public UserServiceHttpPost getUserServiceHttpPost(WebServiceFeature... features) {
-        return super.getPort(new QName("http://blueharvest.com/webservices/", "UserServiceHttpPost"), UserServiceHttpPost.class, features);
-    }
-
     private static URL __getWsdlLocation() {
         if (USERSERVICE_EXCEPTION!= null) {
             throw USERSERVICE_EXCEPTION;

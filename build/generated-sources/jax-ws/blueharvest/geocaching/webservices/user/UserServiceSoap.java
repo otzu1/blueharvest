@@ -59,6 +59,23 @@ public interface UserServiceSoap {
 
     /**
      * 
+     * @param u
+     * @param serviceCredentials
+     * @return
+     *     returns java.lang.Boolean
+     */
+    @WebMethod(operationName = "UpdateUser", action = "http://blueharvest.com/webservices/UpdateUser")
+    @WebResult(name = "UpdateUserResult", targetNamespace = "http://blueharvest.com/webservices/")
+    @RequestWrapper(localName = "UpdateUser", targetNamespace = "http://blueharvest.com/webservices/", className = "blueharvest.geocaching.webservices.user.UpdateUser")
+    @ResponseWrapper(localName = "UpdateUserResponse", targetNamespace = "http://blueharvest.com/webservices/", className = "blueharvest.geocaching.webservices.user.UpdateUserResponse")
+    public Boolean updateUser(
+        @WebParam(name = "u", targetNamespace = "http://blueharvest.com/webservices/")
+        User u,
+        @WebParam(name = "ServiceCredentials", targetNamespace = "http://blueharvest.com/webservices/", header = true, partName = "ServiceCredentials")
+        ServiceCredentials serviceCredentials);
+
+    /**
+     * 
      * @param password
      * @param serviceCredentials
      * @param username
