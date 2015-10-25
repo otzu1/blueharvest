@@ -26,7 +26,7 @@ public interface UserServiceSoap {
     /**
      * 
      * @param serviceCredentials
-     * @param email
+     * @param username
      * @return
      *     returns blueharvest.geocaching.webservices.user.User
      */
@@ -35,8 +35,8 @@ public interface UserServiceSoap {
     @RequestWrapper(localName = "GetUser", targetNamespace = "http://blueharvest.com/webservices/", className = "blueharvest.geocaching.webservices.user.GetUser")
     @ResponseWrapper(localName = "GetUserResponse", targetNamespace = "http://blueharvest.com/webservices/", className = "blueharvest.geocaching.webservices.user.GetUserResponse")
     public User getUser(
-        @WebParam(name = "email", targetNamespace = "http://blueharvest.com/webservices/")
-        String email,
+        @WebParam(name = "username", targetNamespace = "http://blueharvest.com/webservices/")
+        String username,
         @WebParam(name = "ServiceCredentials", targetNamespace = "http://blueharvest.com/webservices/", header = true, partName = "ServiceCredentials")
         ServiceCredentials serviceCredentials);
 
@@ -61,7 +61,7 @@ public interface UserServiceSoap {
      * 
      * @param password
      * @param serviceCredentials
-     * @param email
+     * @param username
      * @return
      *     returns java.lang.Boolean
      */
@@ -70,8 +70,8 @@ public interface UserServiceSoap {
     @RequestWrapper(localName = "AuthUser", targetNamespace = "http://blueharvest.com/webservices/", className = "blueharvest.geocaching.webservices.user.AuthUser")
     @ResponseWrapper(localName = "AuthUserResponse", targetNamespace = "http://blueharvest.com/webservices/", className = "blueharvest.geocaching.webservices.user.AuthUserResponse")
     public Boolean authUser(
-        @WebParam(name = "email", targetNamespace = "http://blueharvest.com/webservices/")
-        String email,
+        @WebParam(name = "username", targetNamespace = "http://blueharvest.com/webservices/")
+        String username,
         @WebParam(name = "password", targetNamespace = "http://blueharvest.com/webservices/")
         String password,
         @WebParam(name = "ServiceCredentials", targetNamespace = "http://blueharvest.com/webservices/", header = true, partName = "ServiceCredentials")
