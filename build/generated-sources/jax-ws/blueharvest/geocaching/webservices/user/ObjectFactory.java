@@ -50,6 +50,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link IsUsernameAvailable }
+     * 
+     */
+    public IsUsernameAvailable createIsUsernameAvailable() {
+        return new IsUsernameAvailable();
+    }
+
+    /**
      * Create an instance of {@link GetUserResponse }
      * 
      */
@@ -103,6 +111,14 @@ public class ObjectFactory {
      */
     public InsertUser createInsertUser() {
         return new InsertUser();
+    }
+
+    /**
+     * Create an instance of {@link IsUsernameAvailableResponse }
+     * 
+     */
+    public IsUsernameAvailableResponse createIsUsernameAvailableResponse() {
+        return new IsUsernameAvailableResponse();
     }
 
     /**

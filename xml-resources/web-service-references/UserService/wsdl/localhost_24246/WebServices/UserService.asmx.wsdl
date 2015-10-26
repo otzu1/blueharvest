@@ -27,6 +27,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="active" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="locked" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="empty" type="s:boolean" />
         </s:sequence>
       </s:complexType>
       <s:element name="ServiceCredentials" type="tns:ServiceCredentials" />
@@ -80,6 +81,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="IsUsernameAvailable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUsernameAvailableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsUsernameAvailableResult" nillable="true" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
     <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
       <s:simpleType name="guid">
@@ -125,6 +140,15 @@
   <wsdl:message name="AuthUserServiceCredentials">
     <wsdl:part name="ServiceCredentials" element="tns:ServiceCredentials" />
   </wsdl:message>
+  <wsdl:message name="IsUsernameAvailableSoapIn">
+    <wsdl:part name="parameters" element="tns:IsUsernameAvailable" />
+  </wsdl:message>
+  <wsdl:message name="IsUsernameAvailableSoapOut">
+    <wsdl:part name="parameters" element="tns:IsUsernameAvailableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsUsernameAvailableServiceCredentials">
+    <wsdl:part name="ServiceCredentials" element="tns:ServiceCredentials" />
+  </wsdl:message>
   <wsdl:portType name="UserServiceSoap">
     <wsdl:operation name="GetUser">
       <wsdl:input message="tns:GetUserSoapIn" />
@@ -141,6 +165,10 @@
     <wsdl:operation name="AuthUser">
       <wsdl:input message="tns:AuthUserSoapIn" />
       <wsdl:output message="tns:AuthUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUsernameAvailable">
+      <wsdl:input message="tns:IsUsernameAvailableSoapIn" />
+      <wsdl:output message="tns:IsUsernameAvailableSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="UserServiceSoap" type="tns:UserServiceSoap">
@@ -185,6 +213,16 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="IsUsernameAvailable">
+      <soap:operation soapAction="http://blueharvestgeo.com/webservices/IsUsernameAvailable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:IsUsernameAvailableServiceCredentials" part="ServiceCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="UserServiceSoap12" type="tns:UserServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -223,6 +261,16 @@
       <wsdl:input>
         <soap12:body use="literal" />
         <soap12:header message="tns:AuthUserServiceCredentials" part="ServiceCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUsernameAvailable">
+      <soap12:operation soapAction="http://blueharvestgeo.com/webservices/IsUsernameAvailable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:IsUsernameAvailableServiceCredentials" part="ServiceCredentials" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap12:body use="literal" />

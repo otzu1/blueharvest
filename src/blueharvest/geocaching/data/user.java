@@ -76,11 +76,18 @@ public abstract class user { // implements data<blueharvest.geocaching.objects.u
      * gets the user from the database through web services
      *
      * @param username username of the web service user object
-     * @return the web service user object
+     * @return the web service user object or null if exception occurs
      */
     private static blueharvest.geocaching.webservices.user.User getUser(
         java.lang.String username) {
-        return getServicePort().getUser(username, getServiceCredentials());
+        try {
+            return getServicePort().getUser(username, getServiceCredentials());
+        } catch (java.lang.Exception ex) { // java.net.ConnectException
+            java.util.logging.Logger.getLogger(
+                new Object().getClass().getName()).log(
+                    java.util.logging.Level.SEVERE, null, ex);
+            return null;
+        }
     }
 
     /**
@@ -156,6 +163,7 @@ public abstract class user { // implements data<blueharvest.geocaching.objects.u
     /**
      * <h3>deletes a user</h3>
      * todo
+     *
      * @param id id of the user
      * @return true/false dependent on whether the user was deleted from storage
      * @throws java.lang.UnsupportedOperationException
