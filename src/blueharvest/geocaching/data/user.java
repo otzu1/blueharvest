@@ -41,6 +41,15 @@ public abstract class user { // implements data<blueharvest.geocaching.objects.u
         return service.getUserServiceSoap();
     }
 
+    /**
+     * <h3>gets a user by id</h3>
+     * todo
+     *
+     * @param id user id
+     * @return user by id
+     * @throws java.lang.UnsupportedOperationException
+     * @since 2015-10-25
+     */
     public static blueharvest.geocaching.objects.user get(java.util.UUID id) {
         // todo
         throw new java.lang.UnsupportedOperationException("Not supported yet.");
@@ -66,12 +75,12 @@ public abstract class user { // implements data<blueharvest.geocaching.objects.u
      * <h3>getUser</h3>
      * gets the user from the database through web services
      *
-     * @param email email of the web service user object
+     * @param username username of the web service user object
      * @return the web service user object
      */
     private static blueharvest.geocaching.webservices.user.User getUser(
-        java.lang.String email) {
-        return getServicePort().getUser(email, getServiceCredentials());
+        java.lang.String username) {
+        return getServicePort().getUser(username, getServiceCredentials());
     }
 
     /**
@@ -98,8 +107,9 @@ public abstract class user { // implements data<blueharvest.geocaching.objects.u
     /**
      * <h3>insertUser</h3>
      *
-     * @param u <b>u</b>ser
+     * @param u (u)ser
      * @return true or false dependent on whether the user was inserted
+     * @since 2015-10
      */
     private static boolean insertUser(
         blueharvest.geocaching.webservices.user.User u) {
@@ -143,26 +153,35 @@ public abstract class user { // implements data<blueharvest.geocaching.objects.u
         }
     }
 
+    /**
+     * <h3>deletes a user</h3>
+     * todo
+     * @param id id of the user
+     * @return true/false dependent on whether the user was deleted from storage
+     * @throws java.lang.UnsupportedOperationException
+     * @since 2015-10-25
+     */
     public static final boolean delete(java.util.UUID id) {
         // todo
         throw new java.lang.UnsupportedOperationException("Not implemented.");
     }
 
     /**
-     * <h3>auth</h3>
-     * authorization for a user
+     * <h3>authorizes a user</h3>
+     * authorization for a user by username and password
      *
-     * @param email email of the user
+     * @param username unique username of the user
      * @param password password (plain text) of the user
      * @return true/false dependent on credentials and inner exceptions
+     * @since 2015-10
      */
-    public static boolean auth(String email, String password) {
-        return authUser(email, password);
+    public static boolean auth(String username, String password) {
+        return authUser(username, password);
     }
 
     private static Boolean authUser(
-        java.lang.String email, java.lang.String password) {
-        return getServicePort().authUser(email, password, getServiceCredentials());
+        java.lang.String username, java.lang.String password) {
+        return getServicePort().authUser(username, password, getServiceCredentials());
     }
 
 }
