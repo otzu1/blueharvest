@@ -6,38 +6,24 @@
 package blueharvest.geocaching.objects;
 
 /**
- *
+ * immutable
  * @author jmb
  * @since 2015-10-13
  */
-public class geocache {
-
-    /**
-     * subject to change! should this be an average?
-     */
-    public enum size {
-
-        small, medium, large
-    }
-
-    /**
-     * subject to change! should this be an average?
-     */
-    public enum difficulty {
-
-        easy, medium, hard
-    }
+public final class geocache {
 
     private final java.util.UUID id;
     private final java.util.Date anniversary;
     private final String name;
     private final String description;
-    private final location location;
-    private final size size; // ???
-    private final difficulty difficulty; // ???
-    private final java.util.ArrayList<image> images;
-    private final logbook logbook;
+    private final int difficulty;
+    private final int terrain;
+    private final int size;
+    private final int status;
     private final user creator;
+    private final java.util.ArrayList<image> images;
+    private final location location;
+    private final logbook logbook;
 
     /**
      * <h3>constructor</h3>
@@ -47,32 +33,37 @@ public class geocache {
      * @param anniversary date which this was created
      * @param name the name of this
      * @param description the description of this
-     * @param location the location of this
-     * @param size the size of this
      * @param difficulty how difficult this is
-     * @param images the images associated with this
-     * @param logbook the logbook associated with this
+     * @param size the size of this
+     * @param terrain the terrain of this
+     * @param status the status of this
      * @param creator the user that created this
-     * @see blueharvest.geocaching.objects.location
-     * @see blueharvest.geocaching.objects.image
-     * @see blueharvest.geocaching.objects.logbook
+     * @param images the images associated with this
+     * @param location the location of this
+     * @param logbook the logbook associated with this
      * @see blueharvest.geocaching.objects.user
+     * @see blueharvest.geocaching.objects.image
+     * @see blueharvest.geocaching.objects.location
+     * @see blueharvest.geocaching.objects.logbook
      */
     public geocache(java.util.UUID id, java.util.Date anniversary, String name,
-        String description, location location, size size, difficulty difficulty,
-        java.util.ArrayList<image> images, logbook logbook, user creator) {
+        String description, int difficulty, int size, int terrain, int status,
+        user creator, java.util.ArrayList<image> images, location location,
+        logbook logbook) {
         this.id = id;
         this.anniversary = anniversary;
         this.name = name;
         this.description = description;
-        this.location = location;
-        this.size = size;
         this.difficulty = difficulty;
+        this.terrain = terrain;
+        this.size = size;
+        this.status = status;
+        this.creator = creator;
         this.images = images;
         this.logbook = logbook;
-        this.creator = creator;
+        this.location = location;
     }
-    
+
     public java.util.UUID getId() {
         return id;
     }
@@ -80,7 +71,7 @@ public class geocache {
     public java.util.Date getAnniversary() {
         return anniversary;
     }
-    
+
     public String getName() {
         return name;
     }
@@ -89,28 +80,36 @@ public class geocache {
         return description;
     }
 
-    public location getLocation() {
-        return location;
+    public int getDifficulty() {
+        return difficulty;
     }
 
-    public size getSize() {
+    public int getTerrain() {
+        return terrain;
+    }
+
+    public int getSize() {
         return size;
     }
 
-    public difficulty getDifficulty() {
-        return difficulty;
+    public int getStatus() {
+        return status;
+    }
+
+    public user getCreator() {
+        return creator;
     }
 
     public java.util.ArrayList<image> getImages() {
         return images;
     }
 
-    public logbook getLogbook() {
-        return logbook;
+    public location getLocation() {
+        return location;
     }
 
-    public user getCreator() {
-        return creator;
+    public logbook getLogbook() {
+        return logbook;
     }
 
 }
