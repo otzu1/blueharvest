@@ -27,6 +27,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="active" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="locked" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         &lt;element name="empty" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -44,7 +45,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "salt",
     "email",
     "active",
-    "locked"
+    "locked",
+    "empty"
 })
 public class User {
 
@@ -60,6 +62,7 @@ public class User {
     protected String email;
     protected boolean active;
     protected boolean locked;
+    protected boolean empty;
 
     /**
      * Gets the value of the id property.
@@ -235,6 +238,22 @@ public class User {
      */
     public void setLocked(boolean value) {
         this.locked = value;
+    }
+
+    /**
+     * Gets the value of the empty property.
+     * 
+     */
+    public boolean isEmpty() {
+        return empty;
+    }
+
+    /**
+     * Sets the value of the empty property.
+     * 
+     */
+    public void setEmpty(boolean value) {
+        this.empty = value;
     }
 
 }

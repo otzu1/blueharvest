@@ -94,4 +94,21 @@ public interface UserServiceSoap {
         @WebParam(name = "ServiceCredentials", targetNamespace = "http://blueharvestgeo.com/webservices/", header = true, partName = "ServiceCredentials")
         ServiceCredentials serviceCredentials);
 
+    /**
+     * 
+     * @param serviceCredentials
+     * @param username
+     * @return
+     *     returns java.lang.Boolean
+     */
+    @WebMethod(operationName = "IsUsernameAvailable", action = "http://blueharvestgeo.com/webservices/IsUsernameAvailable")
+    @WebResult(name = "IsUsernameAvailableResult", targetNamespace = "http://blueharvestgeo.com/webservices/")
+    @RequestWrapper(localName = "IsUsernameAvailable", targetNamespace = "http://blueharvestgeo.com/webservices/", className = "blueharvest.geocaching.webservices.user.IsUsernameAvailable")
+    @ResponseWrapper(localName = "IsUsernameAvailableResponse", targetNamespace = "http://blueharvestgeo.com/webservices/", className = "blueharvest.geocaching.webservices.user.IsUsernameAvailableResponse")
+    public Boolean isUsernameAvailable(
+        @WebParam(name = "username", targetNamespace = "http://blueharvestgeo.com/webservices/")
+        String username,
+        @WebParam(name = "ServiceCredentials", targetNamespace = "http://blueharvestgeo.com/webservices/", header = true, partName = "ServiceCredentials")
+        ServiceCredentials serviceCredentials);
+
 }
