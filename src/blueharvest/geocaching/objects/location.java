@@ -10,7 +10,7 @@ package blueharvest.geocaching.objects;
  * @author jmb
  * @since 2015-10-13
  */
-public class location {
+public final class location {
 
     private final String name;
     private final coordinate latitude;
@@ -106,7 +106,7 @@ public class location {
         /**
          * <h3>constructor</h3>
          *
-         * @param l <u>l</u>atitude or <u>l</u>ongitude in decimal degrees
+         * @param l (l)atitude or (l)ongitude in decimal degrees
          * @see
          * <a href="https://en.wikipedia.org/wiki/Geographic_coordinate_conversion">
          * Geographic Coordinate Conversion</a>
