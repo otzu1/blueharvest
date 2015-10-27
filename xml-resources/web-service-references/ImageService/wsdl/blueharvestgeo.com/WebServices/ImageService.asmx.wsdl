@@ -225,10 +225,10 @@
   </wsdl:binding>
   <wsdl:service name="ImageService">
     <wsdl:port name="ImageServiceSoap" binding="tns:ImageServiceSoap">
-      <soap:address location="http://localhost:24246/WebServices/ImageService.asmx" />
+      <soap:address location="https://blueharvestgeo.com/WebServices/ImageService.asmx" />
     </wsdl:port>
     <wsdl:port name="ImageServiceSoap12" binding="tns:ImageServiceSoap12">
-      <soap12:address location="http://localhost:24246/WebServices/ImageService.asmx" />
+      <soap12:address location="https://blueharvestgeo.com/WebServices/ImageService.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

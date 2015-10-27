@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "UserService", targetNamespace = "http://blueharvestgeo.com/webservices/", wsdlLocation = "http://localhost:24246/WebServices/UserService.asmx?WSDL")
+@WebServiceClient(name = "UserService", targetNamespace = "http://blueharvestgeo.com/webservices/", wsdlLocation = "https://blueharvestgeo.com/WebServices/UserService.asmx?wsdl")
 public class UserService
     extends Service
 {
@@ -30,7 +30,7 @@ public class UserService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:24246/WebServices/UserService.asmx?WSDL");
+            url = new URL("https://blueharvestgeo.com/WebServices/UserService.asmx?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

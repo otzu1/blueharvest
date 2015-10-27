@@ -279,10 +279,10 @@
   </wsdl:binding>
   <wsdl:service name="UserService">
     <wsdl:port name="UserServiceSoap" binding="tns:UserServiceSoap">
-      <soap:address location="http://localhost:24246/WebServices/UserService.asmx" />
+      <soap:address location="https://blueharvestgeo.com/WebServices/UserService.asmx" />
     </wsdl:port>
     <wsdl:port name="UserServiceSoap12" binding="tns:UserServiceSoap12">
-      <soap12:address location="http://localhost:24246/WebServices/UserService.asmx" />
+      <soap12:address location="https://blueharvestgeo.com/WebServices/UserService.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
