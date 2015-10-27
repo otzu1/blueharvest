@@ -3,4 +3,6 @@
     <system systemId="http://localhost:24246/WebServices/UserService.asmx?wsdl" uri="xml-resources/web-service-references/UserService/wsdl/localhost_24246/WebServices/UserService.asmx.wsdl"/>
     <system systemId="http://localhost:24246/WebServices/ImageService.asmx?wsdl" uri="xml-resources/web-service-references/ImageService/wsdl/localhost_24246/WebServices/ImageService.asmx.wsdl"/>
     <system systemId="http://localhost:24246/WebServices/UserService.asmx?WSDL" uri="xml-resources/web-service-references/UserService/wsdl/localhost_24246/WebServices/UserService.asmx.wsdl"/>
+    <system systemId="https://blueharvestgeo.com/WebServices/UserService.asmx?wsdl" uri="xml-resources/web-service-references/UserService/wsdl/blueharvestgeo.com/WebServices/UserService.asmx.wsdl"/>
+    <system systemId="https://blueharvestgeo.com/WebServices/ImageService.asmx?wsdl" uri="xml-resources/web-service-references/ImageService/wsdl/blueharvestgeo.com/WebServices/ImageService.asmx.wsdl"/>
 </catalog>
