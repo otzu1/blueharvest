@@ -10,7 +10,24 @@ package blueharvest.geocaching.data;
  * @author jmb
  * @since 2015-10-16
  */
-public abstract class user { // implements data<blueharvest.geocaching.objects.user>
+public class user extends blueharvest.geocaching.objects.user { // implements data<user>
+
+    private user(java.util.UUID id, java.util.Date anniversary, String username,
+        String password, java.util.UUID salt, String email, boolean active,
+        boolean locked, blueharvest.geocaching.objects.location location,
+        blueharvest.geocaching.objects.image image) {
+        super(id, anniversary, username, password, salt, email, active,
+            locked, location, image);
+    }
+
+    public static user create(java.util.UUID id, java.util.Date anniversary,
+        String username, String password, java.util.UUID salt, String email,
+        boolean active, boolean locked,
+        blueharvest.geocaching.objects.location location,
+        blueharvest.geocaching.objects.image image) {
+        return new user(id, anniversary, username, password, salt, email,
+            active, locked, location, image);
+    }
 
     private static blueharvest.geocaching.webservices.user.ServiceCredentials
         getServiceCredentials() {
@@ -43,32 +60,30 @@ public abstract class user { // implements data<blueharvest.geocaching.objects.u
 
     /**
      * <h3>gets a user by id</h3>
-     * todo
      *
      * @param id user id
      * @return user by id
      * @throws java.lang.UnsupportedOperationException
      * @since 2015-10-25
      */
-    public static blueharvest.geocaching.objects.user get(java.util.UUID id) {
+    public static user get(java.util.UUID id) {
         // todo
         throw new java.lang.UnsupportedOperationException("Not supported yet.");
     }
 
     /**
-     * <h3>get</h3>
+     * <h3>gets a user</h3>
      * gets a user from the web service
      *
      * @param username username of the user
      * @return user
      */
-    public static blueharvest.geocaching.objects.user get(String username) {
-        blueharvest.geocaching.webservices.user.User x = getUser(username);
-        return new blueharvest.geocaching.objects.user(
-            java.util.UUID.fromString(x.getId()),
-            x.getAnniversary().toGregorianCalendar().getTime(),
-            username, x.getPassword(), java.util.UUID.fromString(x.getSalt()),
-            x.getEmail(), x.isActive(), x.isLocked(), null, null);
+    public static user get(String username) {
+        blueharvest.geocaching.webservices.user.User u = getUser(username);
+        return new user(java.util.UUID.fromString(u.getId()),
+            u.getAnniversary().toGregorianCalendar().getTime(),
+            username, u.getPassword(), java.util.UUID.fromString(u.getSalt()),
+            u.getEmail(), u.isActive(), u.isLocked(), null, null);
     }
 
     /**
@@ -100,15 +115,15 @@ public abstract class user { // implements data<blueharvest.geocaching.objects.u
      * @param u (u)ser
      * @return true or false dependent on whether the user was inserted
      */
-    public static boolean insert(blueharvest.geocaching.objects.user u) {
-        blueharvest.geocaching.webservices.user.User x
+    public static boolean insert(user u) {
+        blueharvest.geocaching.webservices.user.User v
             = new blueharvest.geocaching.webservices.user.User();
-        x.setUsername(u.getUsername());
-        x.setPassword(u.getPassword());
-        x.setEmail(u.getEmail());
-        x.setActive(u.isActive());
-        x.setLocked(u.isLocked());
-        return insertUser(x);
+        v.setUsername(u.getUsername());
+        v.setPassword(u.getPassword());
+        v.setEmail(u.getEmail());
+        v.setActive(u.isActive());
+        v.setLocked(u.isLocked());
+        return insertUser(v);
     }
 
     /**
@@ -140,16 +155,17 @@ public abstract class user { // implements data<blueharvest.geocaching.objects.u
      * @return true or false dependent on whether the user was inserted
      * @since 2015-10-24
      */
-    public static final boolean update(blueharvest.geocaching.objects.user u) {
-        blueharvest.geocaching.webservices.user.User x
+    public static final boolean update(user u) {
+        blueharvest.geocaching.webservices.user.User v
             = new blueharvest.geocaching.webservices.user.User();
-        x.setId(u.getId().toString());
-        x.setActive(u.isActive());
-        x.setLocked(u.isLocked());
-        return updateUser(x);
+        v.setId(u.getId().toString());
+        v.setActive(u.isActive());
+        v.setLocked(u.isLocked());
+        return updateUser(v);
     }
 
-    private static Boolean updateUser(blueharvest.geocaching.webservices.user.User u) {
+    private static Boolean updateUser(
+        blueharvest.geocaching.webservices.user.User u) {
         try {
             return getServicePort().updateUser(u, getServiceCredentials());
         } catch (java.lang.Exception ex) { // java.net.ConnectException
@@ -162,7 +178,6 @@ public abstract class user { // implements data<blueharvest.geocaching.objects.u
 
     /**
      * <h3>deletes a user</h3>
-     * todo
      *
      * @param id id of the user
      * @return true/false dependent on whether the user was deleted from storage
@@ -189,7 +204,8 @@ public abstract class user { // implements data<blueharvest.geocaching.objects.u
 
     private static Boolean authUser(
         java.lang.String username, java.lang.String password) {
-        return getServicePort().authUser(username, password, getServiceCredentials());
+        return getServicePort().authUser(
+            username, password, getServiceCredentials());
     }
 
 }

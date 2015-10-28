@@ -10,7 +10,7 @@ package blueharvest.geocaching.objects;
  * @author jmb
  * @since 2015-10-13
  */
-public class logbook {
+public abstract class logbook {
 
     java.util.ArrayList<entry> entries = new java.util.ArrayList<>();
 
@@ -27,7 +27,7 @@ public class logbook {
      * @author jmb
      * @since 2015-10-13
      */
-    public class entry {
+    public abstract class entry {
 
         private final java.util.Date date;
         private final String text;

@@ -12,6 +12,8 @@ package blueharvest.geocaching.data;
  */
 public interface data<T> {
 
+    public abstract T create(Object... o);
+    
     public abstract T get(java.util.UUID id);
 
     public abstract boolean insert(T obj);

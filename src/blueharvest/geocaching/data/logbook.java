@@ -10,19 +10,28 @@ package blueharvest.geocaching.data;
  * @author jmb
  * @since 2015-10-15 Back to the Future Day!
  */
-public abstract class logbook {
+public class logbook extends blueharvest.geocaching.objects.logbook { // implements data<logbook>
 
-    public static blueharvest.geocaching.objects.logbook get(java.util.UUID id) {
+    private logbook(java.util.ArrayList<entry> entries) {
+        super(entries);
+    }
+    
+    public static logbook create(java.util.ArrayList<entry> entries) {
         // todo
         throw new java.lang.UnsupportedOperationException("Not supported yet.");
     }
 
-    public static boolean insert(blueharvest.geocaching.objects.logbook l) {
+    public static logbook get(java.util.UUID id) {
         // todo
         throw new java.lang.UnsupportedOperationException("Not supported yet.");
     }
 
-    public static final boolean update(blueharvest.geocaching.objects.logbook l) {
+    public static boolean insert(logbook l) {
+        // todo
+        throw new java.lang.UnsupportedOperationException("Not supported yet.");
+    }
+
+    public static final boolean update(logbook l) {
         // todo
         throw new java.lang.UnsupportedOperationException("Not supported yet.");
     }
