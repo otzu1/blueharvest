@@ -10,7 +10,7 @@ package blueharvest.geocaching.objects;
  * @author jmb
  * @since 2015-10-13
  */
-public class address {
+public abstract class address {
 
     private final String street;
     private final String city;

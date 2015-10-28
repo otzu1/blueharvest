@@ -10,7 +10,7 @@ package blueharvest.geocaching.objects;
  * @author jmb
  * @since 2015-10-13
  */
-public class user {
+public abstract class user {
 
     private final java.util.UUID id;
     private final java.util.Date anniversary;
@@ -57,7 +57,7 @@ public class user {
     public java.util.UUID getId() {
         return id;
     }
-    
+
     public java.util.Date getAnniversary() {
         return anniversary;
     }
@@ -69,7 +69,7 @@ public class user {
     public String getPassword() {
         return password;
     }
-    
+
     public java.util.UUID getSalt() {
         return salt;
     }
@@ -81,7 +81,7 @@ public class user {
     public boolean isActive() {
         return active;
     }
-    
+
     public boolean isLocked() {
         return locked;
     }

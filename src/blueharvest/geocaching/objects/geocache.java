@@ -7,10 +7,11 @@ package blueharvest.geocaching.objects;
 
 /**
  * immutable
+ *
  * @author jmb
  * @since 2015-10-13
  */
-public final class geocache {
+public abstract class geocache {
 
     private final java.util.UUID id;
     private final java.util.Date anniversary;

@@ -10,7 +10,7 @@ package blueharvest.geocaching.objects;
  * @author jmb
  * @since 2015-10-13
  */
-public final class location {
+public abstract class location {
 
     private final String name;
     private final coordinate latitude;
