@@ -14,6 +14,9 @@ hs_err_pid*
 # configuration file(s) ... everywhere! #
 config.properties
 
+# uml files #
+plantuml/
+
 # netbeans plugin(s) #
 .projectKnowledge
 # netbeans #
