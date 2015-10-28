@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="id" type="{http://microsoft.com/wsdl/types/}guid"/>
  *         &lt;element name="uri" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="rank" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="caption" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -32,14 +32,14 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "Image", propOrder = {
     "id",
     "uri",
-    "rank"
+    "caption"
 })
 public class Image {
 
     @XmlElement(required = true)
     protected String id;
     protected String uri;
-    protected int rank;
+    protected String caption;
 
     /**
      * Gets the value of the id property.
@@ -90,19 +90,27 @@ public class Image {
     }
 
     /**
-     * Gets the value of the rank property.
+     * Gets the value of the caption property.
      * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public int getRank() {
-        return rank;
+    public String getCaption() {
+        return caption;
     }
 
     /**
-     * Sets the value of the rank property.
+     * Sets the value of the caption property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setRank(int value) {
-        this.rank = value;
+    public void setCaption(String value) {
+        this.caption = value;
     }
 
 }
