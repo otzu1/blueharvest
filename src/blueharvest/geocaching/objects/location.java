@@ -15,6 +15,7 @@ public abstract class location {
     private final String name;
     private final coordinate latitude;
     private final coordinate longitude;
+    private final int altitude;
     private final address address;
 
     /**
@@ -24,14 +25,16 @@ public abstract class location {
      * @param name name
      * @param latitude latitude coordinate
      * @param longitude longitude coordinate
+     * @param altitude altitude
      * @param address address
      * @see blueharvest.geocaching.objects.location.coordinate
      */
     public location(String name, double latitude, double longitude,
-        address address) {
+        int altitude, address address) {
         this.name = name;
         this.latitude = new coordinate(latitude);
         this.longitude = new coordinate(longitude);
+        this.altitude = altitude;
         this.address = address;
     }
 
@@ -63,6 +66,10 @@ public abstract class location {
      */
     public coordinate getLongitude() {
         return longitude;
+    }
+    
+    public int getAltitude() {
+        return altitude;
     }
 
     public address getAddress() {
