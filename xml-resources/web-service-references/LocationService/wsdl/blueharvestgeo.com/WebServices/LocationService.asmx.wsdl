@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://blueharvestgeo.com/webservices/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://blueharvestgeo.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://blueharvestgeo.com/webservices/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="GetLocation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLocationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLocationResult" type="tns:Location" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Location">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="latitude" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="longitude" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="altitude" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ServiceCredentials" type="tns:ServiceCredentials" />
+      <s:complexType name="ServiceCredentials">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="InsertLocation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="l" type="tns:Location" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertLocationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertLocationResult" nillable="true" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateLocation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="l" type="tns:Location" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateLocationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateLocationResult" nillable="true" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetLocationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLocation" />
+  </wsdl:message>
+  <wsdl:message name="GetLocationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLocationServiceCredentials">
+    <wsdl:part name="ServiceCredentials" element="tns:ServiceCredentials" />
+  </wsdl:message>
+  <wsdl:message name="InsertLocationSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertLocation" />
+  </wsdl:message>
+  <wsdl:message name="InsertLocationSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertLocationServiceCredentials">
+    <wsdl:part name="ServiceCredentials" element="tns:ServiceCredentials" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLocationSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateLocation" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLocationSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLocationServiceCredentials">
+    <wsdl:part name="ServiceCredentials" element="tns:ServiceCredentials" />
+  </wsdl:message>
+  <wsdl:portType name="LocationServiceSoap">
+    <wsdl:operation name="GetLocation">
+      <wsdl:input message="tns:GetLocationSoapIn" />
+      <wsdl:output message="tns:GetLocationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertLocation">
+      <wsdl:input message="tns:InsertLocationSoapIn" />
+      <wsdl:output message="tns:InsertLocationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLocation">
+      <wsdl:input message="tns:UpdateLocationSoapIn" />
+      <wsdl:output message="tns:UpdateLocationSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LocationServiceSoap" type="tns:LocationServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetLocation">
+      <soap:operation soapAction="http://blueharvestgeo.com/webservices/GetLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetLocationServiceCredentials" part="ServiceCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertLocation">
+      <soap:operation soapAction="http://blueharvestgeo.com/webservices/InsertLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:InsertLocationServiceCredentials" part="ServiceCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLocation">
+      <soap:operation soapAction="http://blueharvestgeo.com/webservices/UpdateLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateLocationServiceCredentials" part="ServiceCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LocationServiceSoap12" type="tns:LocationServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetLocation">
+      <soap12:operation soapAction="http://blueharvestgeo.com/webservices/GetLocation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetLocationServiceCredentials" part="ServiceCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertLocation">
+      <soap12:operation soapAction="http://blueharvestgeo.com/webservices/InsertLocation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:InsertLocationServiceCredentials" part="ServiceCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLocation">
+      <soap12:operation soapAction="http://blueharvestgeo.com/webservices/UpdateLocation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateLocationServiceCredentials" part="ServiceCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LocationService">
+    <wsdl:port name="LocationServiceSoap" binding="tns:LocationServiceSoap">
+      <soap:address location="https://blueharvestgeo.com/WebServices/LocationService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LocationServiceSoap12" binding="tns:LocationServiceSoap12">
+      <soap12:address location="https://blueharvestgeo.com/WebServices/LocationService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
