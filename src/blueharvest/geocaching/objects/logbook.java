@@ -33,7 +33,7 @@ public abstract class logbook {
      * @author jmb
      * @since 2015-10-13
      */
-    public abstract class entry {
+    public static class entry {
 
         private final java.util.UUID id;
         private final java.util.Date date;
