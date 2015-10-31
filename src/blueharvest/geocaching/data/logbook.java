@@ -12,17 +12,20 @@ package blueharvest.geocaching.data;
  */
 public class logbook extends blueharvest.geocaching.objects.logbook { // implements data<logbook>
 
-    private logbook(java.util.ArrayList<entry> entries) {
-        super(entries);
+    private logbook(java.util.UUID id,
+        java.util.ArrayList<blueharvest.geocaching.objects.logbook.entry> entries) {
+        super(id, entries);
     }
     
-    public static logbook create(java.util.ArrayList<entry> entries) {
-        // todo
-        throw new java.lang.UnsupportedOperationException("Not supported yet.");
+    public static logbook create(java.util.UUID id,
+        java.util.ArrayList<blueharvest.geocaching.objects.logbook.entry> entries) {
+        return new logbook(id, entries);
     }
 
     public static logbook get(java.util.UUID id) {
         // todo
+        //java.util.ArrayList<entry> entries = new java.util.ArrayList<>();
+        //entries.add(new logbook.entry(null, null, null, null, null));
         throw new java.lang.UnsupportedOperationException("Not supported yet.");
     }
 
@@ -40,5 +43,25 @@ public class logbook extends blueharvest.geocaching.objects.logbook { // impleme
         // todo
         throw new java.lang.UnsupportedOperationException("Not implemented.");
     }
+    
+    /*
+    public static class entry extends blueharvest.geocaching.objects.logbook.entry {
+
+        private entry(java.util.UUID id, java.util.Date date, String title,
+            String text, blueharvest.geocaching.objects.user user) {
+            super(id, date, title, text, user);
+        }
+        
+        public static entry create(java.util.UUID id, java.util.Date date,
+            String title, String text, blueharvest.geocaching.objects.user user) {
+            return new entry(id, date, title, text, user);
+        }
+        
+        public static final boolean insert(entry e) {
+            throw new java.lang.UnsupportedOperationException("Not implemented.");
+        }
+        
+    }
+    */
 
 }

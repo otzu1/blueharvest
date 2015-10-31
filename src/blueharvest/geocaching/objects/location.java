@@ -12,6 +12,7 @@ package blueharvest.geocaching.objects;
  */
 public abstract class location {
 
+    private final java.util.UUID id;
     private final String name;
     private final coordinate latitude;
     private final coordinate longitude;
@@ -22,6 +23,7 @@ public abstract class location {
      * <h3>location</h3>
      * represents the latitude and longitude coordinates on globe
      *
+     * @param id id
      * @param name name
      * @param latitude latitude coordinate
      * @param longitude longitude coordinate
@@ -29,8 +31,9 @@ public abstract class location {
      * @param address address
      * @see blueharvest.geocaching.objects.location.coordinate
      */
-    public location(String name, double latitude, double longitude,
-        int altitude, address address) {
+    public location(java.util.UUID id, String name, double latitude,
+        double longitude, int altitude, address address) {
+        this.id = id;
         this.name = name;
         this.latitude = new coordinate(latitude);
         this.longitude = new coordinate(longitude);
@@ -38,6 +41,10 @@ public abstract class location {
         this.address = address;
     }
 
+    public java.util.UUID getId() {
+        return id;
+    }
+    
     public String getName() {
         return name;
     }

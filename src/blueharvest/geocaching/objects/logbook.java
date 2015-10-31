@@ -12,10 +12,16 @@ package blueharvest.geocaching.objects;
  */
 public abstract class logbook {
 
+    java.util.UUID id;
     java.util.ArrayList<entry> entries = new java.util.ArrayList<>();
 
-    public logbook(java.util.ArrayList<entry> entries) {
+    public logbook(java.util.UUID id, java.util.ArrayList<entry> entries) {
+        this.id = id;
         this.entries = entries;
+    }
+
+    public java.util.UUID getId() {
+        return id;
     }
 
     public java.util.ArrayList<entry> getEntries() {
@@ -29,18 +35,31 @@ public abstract class logbook {
      */
     public abstract class entry {
 
+        private final java.util.UUID id;
         private final java.util.Date date;
+        private final String title;
         private final String text;
         private final user user;
 
-        public entry(java.util.Date date, String text, user user) {
+        public entry(java.util.UUID id, java.util.Date date, String title,
+            String text, user user) {
+            this.id = id;
             this.date = date;
+            this.title = title;
             this.text = text;
             this.user = user;
         }
 
+        public java.util.UUID getId() {
+            return id;
+        }
+
         public java.util.Date getDate() {
             return date;
+        }
+
+        public String getTitle() {
+            return title;
         }
 
         public String getText() {
