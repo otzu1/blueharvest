@@ -5,8 +5,6 @@
  */
 package blueharvest.geocaching.data;
 
-import blueharvest.geocaching.webservices.location.Location;
-
 /**
  *
  * @author jmb
@@ -82,7 +80,8 @@ public class location extends blueharvest.geocaching.objects.location {
             l.getLatitude(), l.getLongitude(), l.getAltitude(), null);
     }
 
-    private static Location getLocation(java.lang.String id) {
+    private static blueharvest.geocaching.webservices.location.Location
+        getLocation(java.lang.String id) {
         try {
             return getServicePort().getLocation(id, getServiceCredentials());
         } catch (java.lang.Exception ex) { // java.net.ConnectException
@@ -95,9 +94,10 @@ public class location extends blueharvest.geocaching.objects.location {
 
     /**
      * <h3>insert location via web service</h3>
-     *
+     * latitude, longitude, and altitude required
      * @param l (l)ocation
      * @return true/false depending on success of web service
+     * @since 2015-10
      */
     public static boolean insert(location l) {
         blueharvest.geocaching.webservices.location.Location m
@@ -137,7 +137,8 @@ public class location extends blueharvest.geocaching.objects.location {
         return updateLocation(m);
     }
 
-    private static Boolean updateLocation(blueharvest.geocaching.webservices.location.Location l) {
+    private static Boolean updateLocation(
+        blueharvest.geocaching.webservices.location.Location l) {
         try {
             return getServicePort().updateLocation(l, getServiceCredentials());
         } catch (java.lang.Exception ex) { // java.net.ConnectException
