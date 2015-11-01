@@ -192,5 +192,19 @@ public class image extends blueharvest.geocaching.objects.image { // implements 
             return false;
         }
     }
+    
+    /**
+     * <h3>uploads an image</h3>
+     * uploads an image to Amazon Web Services (AWS)
+     * Simple Storage Service (S3)
+     * @return true/false whether the image was uploaded
+     * @see
+     * <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UploadObjSingleOpJava.html">
+     * Location.java</a>
+     */
+    public static boolean upload() {
+        
+        return true;
+    }
 
 }

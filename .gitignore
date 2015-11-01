@@ -23,7 +23,7 @@ plantuml/
 nbproject
 nbproject/private/
 # not all versions of netbeans use the rest, but left here just in case #
-nbbuild/ 
+nbbuild/
 nbdist/
 nbactions.xml
 nb-configuration.xml
@@ -31,8 +31,11 @@ nb-configuration.xml
 
 # build, mixture of resources which should and shouldn't be ignored #
 build/
-!build/generated-sources/jax-ws/blueharvest/geocaching/webservices/user/* # generated sources from wsimport #
-!build/generated-sources/jax-ws/blueharvest/geocaching/webservices/image/* # generated sources from wsimport #
+# generated sources from wsimport #
+!build/generated-sources/jax-ws/blueharvest/geocaching/webservices/user/*
+!build/generated-sources/jax-ws/blueharvest/geocaching/webservices/image/*
+!build/generated-sources/jax-ws/blueharvest/geocaching/webservices/location/*
+!build/generated-sources/jax-ws/blueharvest/geocaching/webservices/logbook/*
 
 # .jar is here #
 dist/
