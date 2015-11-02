@@ -33,6 +33,21 @@
         </s:sequence>
         <s:anyAttribute />
       </s:complexType>
+      <s:element name="GetLocationByCoordinates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="latitude" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="longitude" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLocationByCoordinatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLocationByCoordinatesResult" type="tns:Location" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="InsertLocation">
         <s:complexType>
           <s:sequence>
@@ -79,6 +94,15 @@
   <wsdl:message name="GetLocationServiceCredentials">
     <wsdl:part name="ServiceCredentials" element="tns:ServiceCredentials" />
   </wsdl:message>
+  <wsdl:message name="GetLocationByCoordinatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLocationByCoordinates" />
+  </wsdl:message>
+  <wsdl:message name="GetLocationByCoordinatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLocationByCoordinatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLocationByCoordinatesServiceCredentials">
+    <wsdl:part name="ServiceCredentials" element="tns:ServiceCredentials" />
+  </wsdl:message>
   <wsdl:message name="InsertLocationSoapIn">
     <wsdl:part name="parameters" element="tns:InsertLocation" />
   </wsdl:message>
@@ -102,6 +126,10 @@
       <wsdl:input message="tns:GetLocationSoapIn" />
       <wsdl:output message="tns:GetLocationSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetLocationByCoordinates">
+      <wsdl:input message="tns:GetLocationByCoordinatesSoapIn" />
+      <wsdl:output message="tns:GetLocationByCoordinatesSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="InsertLocation">
       <wsdl:input message="tns:InsertLocationSoapIn" />
       <wsdl:output message="tns:InsertLocationSoapOut" />
@@ -118,6 +146,16 @@
       <wsdl:input>
         <soap:body use="literal" />
         <soap:header message="tns:GetLocationServiceCredentials" part="ServiceCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocationByCoordinates">
+      <soap:operation soapAction="http://blueharvestgeo.com/webservices/GetLocationByCoordinates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetLocationByCoordinatesServiceCredentials" part="ServiceCredentials" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap:body use="literal" />
@@ -151,6 +189,16 @@
       <wsdl:input>
         <soap12:body use="literal" />
         <soap12:header message="tns:GetLocationServiceCredentials" part="ServiceCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocationByCoordinates">
+      <soap12:operation soapAction="http://blueharvestgeo.com/webservices/GetLocationByCoordinates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetLocationByCoordinatesServiceCredentials" part="ServiceCredentials" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap12:body use="literal" />

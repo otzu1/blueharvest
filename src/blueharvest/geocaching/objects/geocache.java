@@ -6,8 +6,6 @@
 package blueharvest.geocaching.objects;
 
 /**
- * immutable
- *
  * @author jmb
  * @since 2015-10-13
  */
@@ -21,6 +19,7 @@ public abstract class geocache {
     private final int terrain;
     private final int size;
     private final int status;
+    private final int type;
     private final user creator;
     private final java.util.ArrayList<image> images;
     private final location location;
@@ -38,6 +37,7 @@ public abstract class geocache {
      * @param size the size of this
      * @param terrain the terrain of this
      * @param status the status of this
+     * @param type the type this is
      * @param creator the user that created this
      * @param images the images associated with this
      * @param location the location of this
@@ -46,11 +46,12 @@ public abstract class geocache {
      * @see blueharvest.geocaching.objects.image
      * @see blueharvest.geocaching.objects.location
      * @see blueharvest.geocaching.objects.logbook
+     * @since 2015
      */
     public geocache(java.util.UUID id, java.util.Date anniversary, String name,
         String description, int difficulty, int size, int terrain, int status,
-        user creator, java.util.ArrayList<image> images, location location,
-        logbook logbook) {
+        int type, user creator, java.util.ArrayList<image> images,
+        location location, logbook logbook) {
         this.id = id;
         this.anniversary = anniversary;
         this.name = name;
@@ -59,6 +60,7 @@ public abstract class geocache {
         this.terrain = terrain;
         this.size = size;
         this.status = status;
+        this.type = type;
         this.creator = creator;
         this.images = images;
         this.logbook = logbook;
@@ -95,6 +97,10 @@ public abstract class geocache {
 
     public int getStatus() {
         return status;
+    }
+
+    public int getType() {
+        return type;
     }
 
     public user getCreator() {

@@ -14,22 +14,22 @@ public class geocache extends blueharvest.geocaching.objects.geocache {
 
     private geocache(java.util.UUID id, java.util.Date anniversary, String name,
         String description, int difficulty, int size, int terrain, int status,
-        blueharvest.geocaching.objects.user creator,
+        int type, blueharvest.geocaching.objects.user creator,
         java.util.ArrayList<blueharvest.geocaching.objects.image> images,
         blueharvest.geocaching.objects.location location,
         blueharvest.geocaching.objects.logbook logbook) {
         super(id, anniversary, name, description, difficulty, size, terrain,
-            status, creator, images, location, logbook);
+            status, type, creator, images, location, logbook);
     }
-    
+
     public static geocache create(java.util.UUID id, java.util.Date anniversary,
         String name, String description, int difficulty, int size, int terrain,
-        int status, blueharvest.geocaching.objects.user creator,
+        int status, int type, blueharvest.geocaching.objects.user creator,
         java.util.ArrayList<blueharvest.geocaching.objects.image> images,
         blueharvest.geocaching.objects.location location,
         blueharvest.geocaching.objects.logbook logbook) {
         return new geocache(id, anniversary, name, description, difficulty,
-            size, terrain, status, creator, images, location, logbook);
+            size, terrain, status, type, creator, images, location, logbook);
     }
 
     public static geocache get(java.util.UUID id) {

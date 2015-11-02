@@ -197,8 +197,9 @@ public class image extends blueharvest.geocaching.objects.image { // implements 
      * <h3>uploads an image</h3>
      * uploads an image to Amazon Web Services (AWS) Simple Storage Service (S3)
      * to a specific bucket in the 'images' directory; the filename is identical
-     * to that of the file itself; only .jpg and .png permitted as per a policy 
+     * to that of the file itself; only .jpg and .png permitted as per a policy
      * specified in the AWS Console
+     *
      * @param f (f)ile to be uploaded
      * @return true/false whether the image was uploaded
      * @see
@@ -220,8 +221,7 @@ public class image extends blueharvest.geocaching.objects.image { // implements 
                 = new com.amazonaws.services.s3.AmazonS3Client(credentials);
             s3client.putObject(new com.amazonaws.services.s3.model.PutObjectRequest(
                 p.getProperty("s3bucket"), "images/" + f.getName(), f)
-                .withCannedAcl(com.amazonaws.services.s3.model
-                    .CannedAccessControlList.PublicRead));
+                .withCannedAcl(com.amazonaws.services.s3.model.CannedAccessControlList.PublicRead));
         } catch (com.amazonaws.services.s3.model.AmazonS3Exception ex) {
             // signature does not match (403), invalid access key (403),
             // access denied (403), no such bucket (404)
@@ -235,13 +235,26 @@ public class image extends blueharvest.geocaching.objects.image { // implements 
                 new Object().getClass().getName()).log(
                     java.util.logging.Level.SEVERE, null, ex);
             return false;
-        } catch (java.io.IOException ex) {
+        } catch (java.io.IOException ex) { // config.properties
             java.util.logging.Logger.getLogger(
                 new Object().getClass().getName()).log(
                     java.util.logging.Level.SEVERE, null, ex);
             return false;
         }
         return true;
+    }
+
+    public static java.io.File download(java.net.URI uri) {
+        // todo
+        throw new java.lang.UnsupportedOperationException("Not supported yet.");
+        /*
+         java.awt.image.BufferedImage img
+         = javax.imageio.ImageIO.read(
+         java.net.URI.create(
+         "https://s3-us-west-2.amazonaws.com/blueharvest/"
+         + "images/20151010_140004.jpg").toURL()
+         .openConnection().getInputStream());
+         */
     }
 
 }
