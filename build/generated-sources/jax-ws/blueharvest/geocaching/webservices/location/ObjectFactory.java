@@ -50,6 +50,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetLocationByCoordinates }
+     * 
+     */
+    public GetLocationByCoordinates createGetLocationByCoordinates() {
+        return new GetLocationByCoordinates();
+    }
+
+    /**
      * Create an instance of {@link GetLocation }
      * 
      */
@@ -79,6 +87,14 @@ public class ObjectFactory {
      */
     public GetLocationResponse createGetLocationResponse() {
         return new GetLocationResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetLocationByCoordinatesResponse }
+     * 
+     */
+    public GetLocationByCoordinatesResponse createGetLocationByCoordinatesResponse() {
+        return new GetLocationByCoordinatesResponse();
     }
 
     /**

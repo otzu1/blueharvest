@@ -43,6 +43,26 @@ public interface LocationServiceSoap {
     /**
      * 
      * @param serviceCredentials
+     * @param latitude
+     * @param longitude
+     * @return
+     *     returns blueharvest.geocaching.webservices.location.Location
+     */
+    @WebMethod(operationName = "GetLocationByCoordinates", action = "http://blueharvestgeo.com/webservices/GetLocationByCoordinates")
+    @WebResult(name = "GetLocationByCoordinatesResult", targetNamespace = "http://blueharvestgeo.com/webservices/")
+    @RequestWrapper(localName = "GetLocationByCoordinates", targetNamespace = "http://blueharvestgeo.com/webservices/", className = "blueharvest.geocaching.webservices.location.GetLocationByCoordinates")
+    @ResponseWrapper(localName = "GetLocationByCoordinatesResponse", targetNamespace = "http://blueharvestgeo.com/webservices/", className = "blueharvest.geocaching.webservices.location.GetLocationByCoordinatesResponse")
+    public Location getLocationByCoordinates(
+        @WebParam(name = "latitude", targetNamespace = "http://blueharvestgeo.com/webservices/")
+        double latitude,
+        @WebParam(name = "longitude", targetNamespace = "http://blueharvestgeo.com/webservices/")
+        double longitude,
+        @WebParam(name = "ServiceCredentials", targetNamespace = "http://blueharvestgeo.com/webservices/", header = true, partName = "ServiceCredentials")
+        ServiceCredentials serviceCredentials);
+
+    /**
+     * 
+     * @param serviceCredentials
      * @param l
      * @return
      *     returns java.lang.Boolean
