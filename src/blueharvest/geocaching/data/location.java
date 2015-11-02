@@ -93,8 +93,37 @@ public class location extends blueharvest.geocaching.objects.location {
     }
 
     /**
-     * <h3>insert location via web service</h3>
+     * <h3>gets location by coordinates latitude and longitude</h3>
+     *
+     * @param latitude latitude
+     * @param longitude longitude
+     * @return location via web service
+     * @since 2015-11-01
+     */
+    public static location get(double latitude, double longitude) {
+        blueharvest.geocaching.webservices.location.Location l
+            = getLocationByCoordinates(latitude, longitude);
+        return new location(java.util.UUID.fromString(l.getId()), null,
+            l.getLatitude(), l.getLongitude(), l.getAltitude(), null);
+    }
+
+    private static blueharvest.geocaching.webservices.location.Location
+        getLocationByCoordinates(double latitude, double longitude) {
+        try {
+            return getServicePort().getLocationByCoordinates(
+                latitude, longitude, getServiceCredentials());
+        } catch (java.lang.Exception ex) { // java.net.ConnectException
+            java.util.logging.Logger.getLogger(
+                new Object().getClass().getName()).log(
+                    java.util.logging.Level.SEVERE, null, ex);
+            return null;
+        }
+    }
+
+    /**
+     * <h3>inserts location via web service</h3>
      * latitude, longitude, and altitude required
+     *
      * @param l (l)ocation
      * @return true/false depending on success of web service
      * @since 2015-10
@@ -121,7 +150,7 @@ public class location extends blueharvest.geocaching.objects.location {
     }
 
     /**
-     * <h3>update a location via web services</h3>
+     * <h3>updates a location via web services</h3>
      *
      * @param l (l)ocation
      * @return true/false depending on whether the record was updated
