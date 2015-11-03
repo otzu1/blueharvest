@@ -91,7 +91,7 @@ public class image extends blueharvest.geocaching.objects.image { // implements 
     /**
      * <h3>factory method</h3>
      *
-     * @param id
+     * @param id id
      * @return an instance of this
      * @since 2015-10-27
      * @see java.util.UUID

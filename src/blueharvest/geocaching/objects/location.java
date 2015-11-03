@@ -44,7 +44,7 @@ public abstract class location {
     public java.util.UUID getId() {
         return id;
     }
-    
+
     public String getName() {
         return name;
     }
@@ -74,7 +74,7 @@ public abstract class location {
     public coordinate getLongitude() {
         return longitude;
     }
-    
+
     public int getAltitude() {
         return altitude;
     }
