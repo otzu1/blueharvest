@@ -24,8 +24,38 @@
           <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="userid" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="user" type="tns:User" />
           <s:element minOccurs="1" maxOccurs="1" name="locationid" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="location" type="tns:Location" />
           <s:element minOccurs="1" maxOccurs="1" name="logbookid" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="logbook" type="tns:Logbook" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="User">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="anniversary" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="salt" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="active" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="locked" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="empty" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Location">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="latitude" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="longitude" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="altitude" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Logbook">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="datetime" type="s:dateTime" />
         </s:sequence>
       </s:complexType>
       <s:element name="InsertGeocacheWithLocationResponse">
@@ -42,6 +72,31 @@
           <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
         </s:sequence>
         <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetGeocachesWithinDistance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="minlatrad" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxlatrad" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="minlngrad" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxlngrad" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="latrad" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="lngrad" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="distance" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGeocachesWithinDistanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGeocachesWithinDistanceResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
       </s:complexType>
     </s:schema>
     <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
@@ -61,10 +116,23 @@
   <wsdl:message name="InsertGeocacheWithLocationServiceCredentials">
     <wsdl:part name="ServiceCredentials" element="tns:ServiceCredentials" />
   </wsdl:message>
+  <wsdl:message name="GetGeocachesWithinDistanceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGeocachesWithinDistance" />
+  </wsdl:message>
+  <wsdl:message name="GetGeocachesWithinDistanceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGeocachesWithinDistanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGeocachesWithinDistanceServiceCredentials">
+    <wsdl:part name="ServiceCredentials" element="tns:ServiceCredentials" />
+  </wsdl:message>
   <wsdl:portType name="GeocacheServiceSoap">
     <wsdl:operation name="InsertGeocacheWithLocation">
       <wsdl:input message="tns:InsertGeocacheWithLocationSoapIn" />
       <wsdl:output message="tns:InsertGeocacheWithLocationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGeocachesWithinDistance">
+      <wsdl:input message="tns:GetGeocachesWithinDistanceSoapIn" />
+      <wsdl:output message="tns:GetGeocachesWithinDistanceSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="GeocacheServiceSoap" type="tns:GeocacheServiceSoap">
@@ -79,6 +147,16 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetGeocachesWithinDistance">
+      <soap:operation soapAction="http://blueharvestgeo.com/webservices/GetGeocachesWithinDistance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetGeocachesWithinDistanceServiceCredentials" part="ServiceCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="GeocacheServiceSoap12" type="tns:GeocacheServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -87,6 +165,16 @@
       <wsdl:input>
         <soap12:body use="literal" />
         <soap12:header message="tns:InsertGeocacheWithLocationServiceCredentials" part="ServiceCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGeocachesWithinDistance">
+      <soap12:operation soapAction="http://blueharvestgeo.com/webservices/GetGeocachesWithinDistance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetGeocachesWithinDistanceServiceCredentials" part="ServiceCredentials" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap12:body use="literal" />

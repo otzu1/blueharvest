@@ -66,6 +66,54 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetGeocachesWithinDistance }
+     * 
+     */
+    public GetGeocachesWithinDistance createGetGeocachesWithinDistance() {
+        return new GetGeocachesWithinDistance();
+    }
+
+    /**
+     * Create an instance of {@link GetGeocachesWithinDistanceResponse }
+     * 
+     */
+    public GetGeocachesWithinDistanceResponse createGetGeocachesWithinDistanceResponse() {
+        return new GetGeocachesWithinDistanceResponse();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfAnyType }
+     * 
+     */
+    public ArrayOfAnyType createArrayOfAnyType() {
+        return new ArrayOfAnyType();
+    }
+
+    /**
+     * Create an instance of {@link Logbook }
+     * 
+     */
+    public Logbook createLogbook() {
+        return new Logbook();
+    }
+
+    /**
+     * Create an instance of {@link User }
+     * 
+     */
+    public User createUser() {
+        return new User();
+    }
+
+    /**
+     * Create an instance of {@link Location }
+     * 
+     */
+    public Location createLocation() {
+        return new Location();
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ServiceCredentials }{@code >}}
      * 
      */
