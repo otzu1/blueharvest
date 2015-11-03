@@ -46,4 +46,39 @@ public interface GeocacheServiceSoap {
         @WebParam(name = "ServiceCredentials", targetNamespace = "http://blueharvestgeo.com/webservices/", header = true, partName = "ServiceCredentials")
         ServiceCredentials serviceCredentials);
 
+    /**
+     * 
+     * @param maxlatrad
+     * @param minlngrad
+     * @param distance
+     * @param serviceCredentials
+     * @param lngrad
+     * @param minlatrad
+     * @param latrad
+     * @param maxlngrad
+     * @return
+     *     returns blueharvest.geocaching.webservices.geocache.ArrayOfAnyType
+     */
+    @WebMethod(operationName = "GetGeocachesWithinDistance", action = "http://blueharvestgeo.com/webservices/GetGeocachesWithinDistance")
+    @WebResult(name = "GetGeocachesWithinDistanceResult", targetNamespace = "http://blueharvestgeo.com/webservices/")
+    @RequestWrapper(localName = "GetGeocachesWithinDistance", targetNamespace = "http://blueharvestgeo.com/webservices/", className = "blueharvest.geocaching.webservices.geocache.GetGeocachesWithinDistance")
+    @ResponseWrapper(localName = "GetGeocachesWithinDistanceResponse", targetNamespace = "http://blueharvestgeo.com/webservices/", className = "blueharvest.geocaching.webservices.geocache.GetGeocachesWithinDistanceResponse")
+    public ArrayOfAnyType getGeocachesWithinDistance(
+        @WebParam(name = "minlatrad", targetNamespace = "http://blueharvestgeo.com/webservices/")
+        double minlatrad,
+        @WebParam(name = "maxlatrad", targetNamespace = "http://blueharvestgeo.com/webservices/")
+        double maxlatrad,
+        @WebParam(name = "minlngrad", targetNamespace = "http://blueharvestgeo.com/webservices/")
+        double minlngrad,
+        @WebParam(name = "maxlngrad", targetNamespace = "http://blueharvestgeo.com/webservices/")
+        double maxlngrad,
+        @WebParam(name = "latrad", targetNamespace = "http://blueharvestgeo.com/webservices/")
+        double latrad,
+        @WebParam(name = "lngrad", targetNamespace = "http://blueharvestgeo.com/webservices/")
+        double lngrad,
+        @WebParam(name = "distance", targetNamespace = "http://blueharvestgeo.com/webservices/")
+        double distance,
+        @WebParam(name = "ServiceCredentials", targetNamespace = "http://blueharvestgeo.com/webservices/", header = true, partName = "ServiceCredentials")
+        ServiceCredentials serviceCredentials);
+
 }

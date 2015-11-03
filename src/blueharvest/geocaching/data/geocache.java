@@ -5,6 +5,8 @@
  */
 package blueharvest.geocaching.data;
 
+import blueharvest.geocaching.webservices.geocache.ArrayOfAnyType;
+
 /**
  *
  * @author jmb
@@ -72,6 +74,7 @@ public class geocache extends blueharvest.geocaching.objects.geocache {
      * preconditions: the user must exist; location latitude and longitude must
      * be specified.<br />
      * logbook and location inserted alongside
+     *
      * @param g (g)eocache
      * @return true/false depending on whether the geocache was inserted
      * //@throws java.lang.Exception
@@ -116,6 +119,39 @@ public class geocache extends blueharvest.geocaching.objects.geocache {
     public static final boolean delete(java.util.UUID id) {
         // todo
         throw new java.lang.UnsupportedOperationException("Not implemented.");
+    }
+
+    public static java.util.ArrayList<geocache> getWithinDistance(
+        double minlatrad, double maxlatrad, double minlngrad, double maxlngrad,
+        double latrad, double lngrad, double distance) {
+        java.util.ArrayList<blueharvest.geocaching.objects.geocache> g
+            = new java.util.ArrayList<>();
+        java.util.List<Object> f = getGeocachesWithinDistance(
+            minlatrad, maxlatrad, minlngrad, maxlngrad,
+            latrad, lngrad, distance).getAnyType();
+        // get the geocaches from one array to another
+        if (f.size() > 0) {
+            for (int i = 0; i < f.size(); i++) { // todo: enhanced loop
+                // START HERE
+                //f.get(i);
+            }
+        }
+return null; // todo
+    }
+
+    private static ArrayOfAnyType getGeocachesWithinDistance(
+        double minlatrad, double maxlatrad, double minlngrad, double maxlngrad,
+        double latrad, double lngrad, double distance) {
+        try {
+            return getServicePort().getGeocachesWithinDistance(
+                minlatrad, maxlatrad, minlngrad, maxlngrad, latrad,
+                lngrad, distance, getServiceCredentials());
+        } catch (java.lang.Exception ex) { // java.net.ConnectException
+            java.util.logging.Logger.getLogger(
+                new Object().getClass().getName()).log(
+                    java.util.logging.Level.SEVERE, null, ex);
+            return null;
+        }
     }
 
 }

@@ -75,7 +75,6 @@ public class logbook extends blueharvest.geocaching.objects.logbook { // impleme
      * @since 2015-10-31 Hallowe'en!
      */
     public static logbook get(java.util.UUID id) {
-        // todo
         java.util.ArrayList<blueharvest.geocaching.objects.logbook.entry> e
             = new java.util.ArrayList<>();
         java.util.List<Object> f = getLogbook(id.toString()).getAnyType();

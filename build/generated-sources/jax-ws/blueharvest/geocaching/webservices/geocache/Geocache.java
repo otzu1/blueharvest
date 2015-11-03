@@ -29,8 +29,11 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="status" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="type" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="userid" type="{http://microsoft.com/wsdl/types/}guid"/>
+ *         &lt;element name="user" type="{http://blueharvestgeo.com/webservices/}User" minOccurs="0"/>
  *         &lt;element name="locationid" type="{http://microsoft.com/wsdl/types/}guid"/>
+ *         &lt;element name="location" type="{http://blueharvestgeo.com/webservices/}Location" minOccurs="0"/>
  *         &lt;element name="logbookid" type="{http://microsoft.com/wsdl/types/}guid"/>
+ *         &lt;element name="logbook" type="{http://blueharvestgeo.com/webservices/}Logbook" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -51,8 +54,11 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "status",
     "type",
     "userid",
+    "user",
     "locationid",
-    "logbookid"
+    "location",
+    "logbookid",
+    "logbook"
 })
 public class Geocache {
 
@@ -70,10 +76,13 @@ public class Geocache {
     protected int type;
     @XmlElement(required = true)
     protected String userid;
+    protected User user;
     @XmlElement(required = true)
     protected String locationid;
+    protected Location location;
     @XmlElement(required = true)
     protected String logbookid;
+    protected Logbook logbook;
 
     /**
      * Gets the value of the id property.
@@ -276,6 +285,30 @@ public class Geocache {
     }
 
     /**
+     * Gets the value of the user property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link User }
+     *     
+     */
+    public User getUser() {
+        return user;
+    }
+
+    /**
+     * Sets the value of the user property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link User }
+     *     
+     */
+    public void setUser(User value) {
+        this.user = value;
+    }
+
+    /**
      * Gets the value of the locationid property.
      * 
      * @return
@@ -300,6 +333,30 @@ public class Geocache {
     }
 
     /**
+     * Gets the value of the location property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Location }
+     *     
+     */
+    public Location getLocation() {
+        return location;
+    }
+
+    /**
+     * Sets the value of the location property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Location }
+     *     
+     */
+    public void setLocation(Location value) {
+        this.location = value;
+    }
+
+    /**
      * Gets the value of the logbookid property.
      * 
      * @return
@@ -321,6 +378,30 @@ public class Geocache {
      */
     public void setLogbookid(String value) {
         this.logbookid = value;
+    }
+
+    /**
+     * Gets the value of the logbook property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Logbook }
+     *     
+     */
+    public Logbook getLogbook() {
+        return logbook;
+    }
+
+    /**
+     * Sets the value of the logbook property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Logbook }
+     *     
+     */
+    public void setLogbook(Logbook value) {
+        this.logbook = value;
     }
 
 }
