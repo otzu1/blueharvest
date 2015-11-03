@@ -63,7 +63,7 @@ public class user extends blueharvest.geocaching.objects.user { // implements da
      *
      * @param id user id
      * @return user by id
-     * @throws java.lang.UnsupportedOperationException
+     * @throws java.lang.UnsupportedOperationException not supported yet
      * @since 2015-10-25
      */
     public static user get(java.util.UUID id) {
@@ -181,7 +181,7 @@ public class user extends blueharvest.geocaching.objects.user { // implements da
      *
      * @param id id of the user
      * @return true/false dependent on whether the user was deleted from storage
-     * @throws java.lang.UnsupportedOperationException
+     * @throws java.lang.UnsupportedOperationException not supported yet
      * @since 2015-10-25
      */
     public static final boolean delete(java.util.UUID id) {

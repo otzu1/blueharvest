@@ -135,6 +135,7 @@ public class geocache extends blueharvest.geocaching.objects.geocache {
      * <li>geocache.location.address - null</li>
      * <li>geocache.logbook.entries - null (todo)</li>
      * </ul>
+     *
      * @param minlatrad minimum latitude in radians
      * @param maxlatrad maximum latitude in radians
      * @param minlngrad minimum longitude in radians
@@ -143,9 +144,10 @@ public class geocache extends blueharvest.geocaching.objects.geocache {
      * @param lngrad center longitude in radians
      * @param distance measurement from center coordinates
      * @return a list of geocaches within the distance from the center
-     *         coordinates
+     * coordinates
      * @since 2015-11-02
-     * @see <a href="http://JanMatuschek.de/LatitudeLongitudeBoundingCoordinates#Java">
+     * @see
+     * <a href="http://JanMatuschek.de/LatitudeLongitudeBoundingCoordinates#Java">
      * http://JanMatuschek.de/LatitudeLongitudeBoundingCoordinates#Java</a>
      * @see blueharvest.geocaching.util.GeoLocation
      */
@@ -172,13 +174,13 @@ public class geocache extends blueharvest.geocaching.objects.geocache {
                     ((blueharvest.geocaching.webservices.geocache.Geocache) h.get(i)).getStatus(),
                     ((blueharvest.geocaching.webservices.geocache.Geocache) h.get(i)).getType(),
                     blueharvest.geocaching.data.user.create(java.util.UUID.fromString(
-                        ((blueharvest.geocaching.webservices.geocache.Geocache) h.get(i)).getUser().getId()),
+                            ((blueharvest.geocaching.webservices.geocache.Geocache) h.get(i)).getUser().getId()),
                         ((blueharvest.geocaching.webservices.geocache.Geocache) h.get(i)).getUser().getAnniversary().toGregorianCalendar().getTime(), // not implemented
                         ((blueharvest.geocaching.webservices.geocache.Geocache) h.get(i)).getUser().getUsername(),
                         ((blueharvest.geocaching.webservices.geocache.Geocache) h.get(i)).getUser().getPassword(), // intentionally not implemented
                         java.util.UUID.fromString(((blueharvest.geocaching.webservices.geocache.Geocache) h.get(i)).getUser().getSalt()), // intentionally not implemented
                         ((blueharvest.geocaching.webservices.geocache.Geocache) h.get(i)).getUser().getEmail(),
-                        true, false, null, null), // active, locked, image, and location not implemented 
+                        true, false, null, null), // active, locked, image, and location not implemented
                     null, // java.util.ArrayList<blueharvest.geocaching.objects.image> images not implemented, todo
                     blueharvest.geocaching.data.location.create(
                         java.util.UUID.fromString(
@@ -189,7 +191,7 @@ public class geocache extends blueharvest.geocaching.objects.geocache {
                         ((blueharvest.geocaching.webservices.geocache.Geocache) h.get(i)).getLocation().getAltitude(),
                         null), // location.address not implemented
                     blueharvest.geocaching.data.logbook.create(java.util.UUID.fromString(
-                        ((blueharvest.geocaching.webservices.geocache.Geocache) h.get(i)).getLogbook().getId()),
+                            ((blueharvest.geocaching.webservices.geocache.Geocache) h.get(i)).getLogbook().getId()),
                         null))); // logbook.entries not implemented
             }
         }
