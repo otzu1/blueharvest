@@ -44,6 +44,7 @@ build/generated/
 
 # .jar is here #
 dist/
+lib/
 
 # test/ # leave this commented to include tests created here by junit #
 
