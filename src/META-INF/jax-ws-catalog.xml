@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="https://blueharvestgeo.com/WebServices/UserService.asmx?wsdl" uri="wsdl/blueharvestgeo.com/WebServices/UserService.asmx.wsdl"/>
+    <system systemId="https://blueharvestgeo.com/WebServices/ImageService.asmx?wsdl" uri="wsdl/blueharvestgeo.com/WebServices/ImageService.asmx.wsdl"/>
+    <system systemId="https://blueharvestgeo.com/WebServices/LocationService.asmx?wsdl" uri="wsdl/blueharvestgeo.com/WebServices/LocationService.asmx.wsdl"/>
+    <system systemId="https://blueharvestgeo.com/WebServices/LogbookService.asmx?wsdl" uri="wsdl/blueharvestgeo.com/WebServices/LogbookService.asmx.wsdl"/>
+    <system systemId="https://blueharvestgeo.com/WebServices/GeocacheService.asmx?wsdl" uri="wsdl/blueharvestgeo.com/WebServices/GeocacheService.asmx.wsdl"/>
+    <system systemId="https://blueharvestgeo.com/WebServices/DatabaseService.asmx?wsdl" uri="wsdl/blueharvestgeo.com/WebServices/DatabaseService.asmx.wsdl"/>
+</catalog>

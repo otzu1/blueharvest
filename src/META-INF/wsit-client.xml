@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <definitions 
+ xmlns="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="mainclientconfig" 
+ >
+    <import location="UserService.asmx.xml" namespace="http://blueharvest.com/webservices/"/>
+    <import location="ImageService.asmx.xml" namespace="http://blueharvestgeo.com/webservices/"/>
+    <import location="LocationService.asmx.xml" namespace="http://blueharvestgeo.com/webservices/"/>
+    <import location="LogbookService.asmx.xml" namespace="http://blueharvestgeo.com/webservices/"/>
+    <import location="GeocacheService.asmx.xml" namespace="http://blueharvestgeo.com/webservices/"/>
+    <import location="DatabaseService.asmx.xml" namespace="http://blueharvestgeo.com/webservices/"/>
+</definitions>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://blueharvestgeo.com/webservices/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://blueharvestgeo.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://blueharvestgeo.com/webservices/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="GetLogbook">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLogbookResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLogbookResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ServiceCredentials" type="tns:ServiceCredentials" />
+      <s:complexType name="ServiceCredentials">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="InsertLogbook">
+        <s:complexType />
+      </s:element>
+      <s:element name="InsertLogbookResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertLogbookResult" nillable="true" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertLogbookEntry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entry" type="tns:LogbookEntry" />
+            <s:element minOccurs="1" maxOccurs="1" name="userid" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="logbookid" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LogbookEntry">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="datetime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="uri" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertLogbookEntryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertLogbookEntryResult" nillable="true" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertLogbookEntryByStrings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userid" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="logbookid" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertLogbookEntryByStringsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertLogbookEntryByStringsResult" nillable="true" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetLogbookSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLogbook" />
+  </wsdl:message>
+  <wsdl:message name="GetLogbookSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLogbookResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLogbookServiceCredentials">
+    <wsdl:part name="ServiceCredentials" element="tns:ServiceCredentials" />
+  </wsdl:message>
+  <wsdl:message name="InsertLogbookSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertLogbook" />
+  </wsdl:message>
+  <wsdl:message name="InsertLogbookSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertLogbookResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertLogbookServiceCredentials">
+    <wsdl:part name="ServiceCredentials" element="tns:ServiceCredentials" />
+  </wsdl:message>
+  <wsdl:message name="InsertLogbookEntrySoapIn">
+    <wsdl:part name="parameters" element="tns:InsertLogbookEntry" />
+  </wsdl:message>
+  <wsdl:message name="InsertLogbookEntrySoapOut">
+    <wsdl:part name="parameters" element="tns:InsertLogbookEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertLogbookEntryServiceCredentials">
+    <wsdl:part name="ServiceCredentials" element="tns:ServiceCredentials" />
+  </wsdl:message>
+  <wsdl:message name="InsertLogbookEntryByStringsSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertLogbookEntryByStrings" />
+  </wsdl:message>
+  <wsdl:message name="InsertLogbookEntryByStringsSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertLogbookEntryByStringsResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertLogbookEntryByStringsServiceCredentials">
+    <wsdl:part name="ServiceCredentials" element="tns:ServiceCredentials" />
+  </wsdl:message>
+  <wsdl:portType name="LogbookServiceSoap">
+    <wsdl:operation name="GetLogbook">
+      <wsdl:input message="tns:GetLogbookSoapIn" />
+      <wsdl:output message="tns:GetLogbookSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertLogbook">
+      <wsdl:input message="tns:InsertLogbookSoapIn" />
+      <wsdl:output message="tns:InsertLogbookSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertLogbookEntry">
+      <wsdl:input message="tns:InsertLogbookEntrySoapIn" />
+      <wsdl:output message="tns:InsertLogbookEntrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertLogbookEntryByStrings">
+      <wsdl:input message="tns:InsertLogbookEntryByStringsSoapIn" />
+      <wsdl:output message="tns:InsertLogbookEntryByStringsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LogbookServiceSoap" type="tns:LogbookServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetLogbook">
+      <soap:operation soapAction="http://blueharvestgeo.com/webservices/GetLogbook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetLogbookServiceCredentials" part="ServiceCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertLogbook">
+      <soap:operation soapAction="http://blueharvestgeo.com/webservices/InsertLogbook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:InsertLogbookServiceCredentials" part="ServiceCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertLogbookEntry">
+      <soap:operation soapAction="http://blueharvestgeo.com/webservices/InsertLogbookEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:InsertLogbookEntryServiceCredentials" part="ServiceCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertLogbookEntryByStrings">
+      <soap:operation soapAction="http://blueharvestgeo.com/webservices/InsertLogbookEntryByStrings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:InsertLogbookEntryByStringsServiceCredentials" part="ServiceCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LogbookServiceSoap12" type="tns:LogbookServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetLogbook">
+      <soap12:operation soapAction="http://blueharvestgeo.com/webservices/GetLogbook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetLogbookServiceCredentials" part="ServiceCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertLogbook">
+      <soap12:operation soapAction="http://blueharvestgeo.com/webservices/InsertLogbook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:InsertLogbookServiceCredentials" part="ServiceCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertLogbookEntry">
+      <soap12:operation soapAction="http://blueharvestgeo.com/webservices/InsertLogbookEntry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:InsertLogbookEntryServiceCredentials" part="ServiceCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertLogbookEntryByStrings">
+      <soap12:operation soapAction="http://blueharvestgeo.com/webservices/InsertLogbookEntryByStrings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:InsertLogbookEntryByStringsServiceCredentials" part="ServiceCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LogbookService">
+    <wsdl:port name="LogbookServiceSoap" binding="tns:LogbookServiceSoap">
+      <soap:address location="https://blueharvestgeo.com/WebServices/LogbookService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LogbookServiceSoap12" binding="tns:LogbookServiceSoap12">
+      <soap12:address location="https://blueharvestgeo.com/WebServices/LogbookService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
