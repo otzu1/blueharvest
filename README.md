@@ -7,6 +7,9 @@ execution fails with a java.lang.NoClassDefFoundError.
 2. adding the .jar file as a module doesn't compile.
 3. switched the jdk from 1.8 to 1.7, still the app crashes.
 
+TODO: fix repository mess!
+
+
         .=.
        '==c|
        [)-+|
