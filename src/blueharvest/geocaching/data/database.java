@@ -40,9 +40,13 @@ public class database {
         return service.getDatabaseServiceSoap();
     }
 
-    public database() {
+    private database() {
     }
 
+    public static String test(){
+        return "blueharvest.geocaching.data.database.test()";
+    }
+   
     public static boolean delete() {
         return deleteAll();
     }

@@ -41,6 +41,7 @@ build/generated/
 !build/generated-sources/jax-ws/blueharvest/geocaching/webservices/address/*
 !build/generated-sources/jax-ws/blueharvest/geocaching/webservices/logbook/*
 !build/generated-sources/jax-ws/blueharvest/geocaching/webservices/geocache/*
+!build/generated-sources/jax-ws/blueharvest/geocaching/webservices/database/*
 
 # .jar is here #
 dist/
