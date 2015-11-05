@@ -10,4 +10,8 @@
     <import location="LocationService.asmx.xml" namespace="http://blueharvestgeo.com/webservices/"/>
     <import location="LogbookService.asmx.xml" namespace="http://blueharvestgeo.com/webservices/"/>
     <import location="GeocacheService.asmx.xml" namespace="http://blueharvestgeo.com/webservices/"/>
+<<<<<<< HEAD
+=======
+    <import location="DatabaseService.asmx.xml" namespace="http://blueharvestgeo.com/webservices/"/>
+>>>>>>> 6ad73c5163931e630dadb9f78c5a390f4f1e86f6
 </definitions>

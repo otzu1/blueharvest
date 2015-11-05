@@ -5,4 +5,8 @@
     <system systemId="https://blueharvestgeo.com/WebServices/LocationService.asmx?wsdl" uri="wsdl/blueharvestgeo.com/WebServices/LocationService.asmx.wsdl"/>
     <system systemId="https://blueharvestgeo.com/WebServices/LogbookService.asmx?wsdl" uri="wsdl/blueharvestgeo.com/WebServices/LogbookService.asmx.wsdl"/>
     <system systemId="https://blueharvestgeo.com/WebServices/GeocacheService.asmx?wsdl" uri="wsdl/blueharvestgeo.com/WebServices/GeocacheService.asmx.wsdl"/>
+<<<<<<< HEAD
+=======
+    <system systemId="https://blueharvestgeo.com/WebServices/DatabaseService.asmx?wsdl" uri="wsdl/blueharvestgeo.com/WebServices/DatabaseService.asmx.wsdl"/>
+>>>>>>> 6ad73c5163931e630dadb9f78c5a390f4f1e86f6
 </catalog>
