@@ -9,6 +9,8 @@ package blueharvest.geocaching.data;
  *
  * @author jmb
  * @since 2015-10-24
+ * @warning not fully compatible in an Android environment; however, upload()
+ * is of interest
  */
 public class image extends blueharvest.geocaching.objects.image { // implements data<image>
 

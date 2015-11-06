@@ -41,17 +41,14 @@ build/generated/
 !build/generated-sources/jax-ws/blueharvest/geocaching/webservices/address/*
 !build/generated-sources/jax-ws/blueharvest/geocaching/webservices/logbook/*
 !build/generated-sources/jax-ws/blueharvest/geocaching/webservices/geocache/*
-<<<<<<< HEAD
-
-# .jar is here #
-dist/
-=======
 !build/generated-sources/jax-ws/blueharvest/geocaching/webservices/database/*
 
 # .jar is here #
 dist/
+
+# .jar is here #
+dist/
 lib/
->>>>>>> 6ad73c5163931e630dadb9f78c5a390f4f1e86f6
 
 # test/ # leave this commented to include tests created here by junit #
 
@@ -64,7 +61,4 @@ Thumbs.db
 # deprecated and deleted #
 src/blueharvest/geocaching/database/
 src/blueharvest/geocaching/httpxml/
-<<<<<<< HEAD
-=======
-/build/
->>>>>>> 6ad73c5163931e630dadb9f78c5a390f4f1e86f6
+

@@ -9,6 +9,7 @@ package blueharvest.geocaching.data;
  *
  * @author jmb
  * @since 2015-10-15 Back to the Future Day!
+ * @warning not fully compatible in an Android environment
  */
 public class logbook extends blueharvest.geocaching.objects.logbook { // implements data<logbook>
 

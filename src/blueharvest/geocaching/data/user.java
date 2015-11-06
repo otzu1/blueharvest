@@ -9,6 +9,7 @@ package blueharvest.geocaching.data;
  *
  * @author jmb
  * @since 2015-10-16
+ * @warning not fully compatible in an Android environment
  */
 public class user extends blueharvest.geocaching.objects.user { // implements data<user>
 
