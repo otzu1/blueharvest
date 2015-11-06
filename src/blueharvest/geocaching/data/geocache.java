@@ -36,21 +36,10 @@ public class geocache extends blueharvest.geocaching.objects.geocache {
         getServiceCredentials() {
         blueharvest.geocaching.webservices.geocache.ServiceCredentials sc
             = new blueharvest.geocaching.webservices.geocache.ServiceCredentials();
-        try { // use properties file for credentials
-            java.util.Properties p = new java.util.Properties();
-            p.load(new Object().getClass().getResourceAsStream(
-                "/blueharvest/geocaching/resources/config.properties"));
-            sc.setUsername(p.getProperty("wsu"));
-            sc.setPassword(p.getProperty("wsp"));
-        } catch (java.io.FileNotFoundException ex) {
-            java.util.logging.Logger.getLogger(
-                new Object().getClass().getName()).log(
-                    java.util.logging.Level.SEVERE, null, ex);
-        } catch (java.io.IOException ex) {
-            java.util.logging.Logger.getLogger(
-                new Object().getClass().getName()).log(
-                    java.util.logging.Level.SEVERE, null, ex);
-        }
+        sc.setUsername(
+            new blueharvest.geocaching.resources.properties().getProperty("wsu"));
+        sc.setPassword(
+            new blueharvest.geocaching.resources.properties().getProperty("wsp"));
         return sc;
     }
 
