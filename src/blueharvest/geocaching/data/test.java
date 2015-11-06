@@ -6,8 +6,10 @@
 package blueharvest.geocaching.data;
 
 /**
- *
+ * testing object used in discovering that using the JAX library in an Android
+ * environment was a no-no
  * @author jmb
+ * @since 2015-11-05
  */
 public class test {
 

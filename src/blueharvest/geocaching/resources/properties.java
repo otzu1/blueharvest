@@ -8,6 +8,7 @@ package blueharvest.geocaching.resources;
 /**
  *
  * @author jmb
+ * @warning not fully tested in an Android environment, but could come in handy
  */
 public class properties extends java.util.Properties {
 

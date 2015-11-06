@@ -6,8 +6,9 @@
 package blueharvest.geocaching.data;
 
 /**
- *
  * @author jmb
+ * @since 2015-11
+ * @warning not fully compatible with Android SDK
  */
 public class database {
 

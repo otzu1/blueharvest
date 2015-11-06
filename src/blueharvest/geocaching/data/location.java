@@ -9,6 +9,7 @@ package blueharvest.geocaching.data;
  *
  * @author jmb
  * @since 2015-10-31 Hallowe'en ... Boo!
+ * @warning not fully compatible in an Android environment
  */
 public class location extends blueharvest.geocaching.objects.location {
 
